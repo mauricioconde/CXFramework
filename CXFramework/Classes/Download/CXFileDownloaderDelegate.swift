@@ -87,7 +87,7 @@ import Foundation
     ///     - fdi: The 'CXFileDownloadInfo' object attached to the downloading file
     //      - index: The index of the 'CXFileDownloadInfo' object inside the array of Downloads
     ///     - error: If an error occurred, an error object indicating how the transfer failed, otherwise NULL.
-    func cxFileDownloader(_ fdi: CXFileDownloadInfo?, index: Int, didCompleteWithError error: NSError?)
+    func cxFileDownloader(_ fdi: CXFileDownloadInfo?, index: Int, didCompleteWithError error: Error?)
     
     /// Tells the delegate that all downloads are over. This delegate method is executed always in the
     /// main thread. You could use it, for example, to show a local notification to inform the user 

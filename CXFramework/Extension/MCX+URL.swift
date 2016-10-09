@@ -16,6 +16,5 @@ public extension URL {
     public static func openLink(_ url:String){
         let nsurl = URL(string:url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         UIApplication.shared.openURL(nsurl)
-        
     }    
 }

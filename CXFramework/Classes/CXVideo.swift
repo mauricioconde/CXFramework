@@ -64,7 +64,7 @@ public class CXVideo {
             self.layoutIfNeeded()
         }
         
-        public orientationChanged(){
+        public func orientationChanged(){
             let orientation = UIDevice.current.orientation
             
             //Restore the layer's original size

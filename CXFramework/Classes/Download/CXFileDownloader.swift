@@ -229,7 +229,7 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
         }
         
         let destinationURL = URL(string:CXDataStorage.pathForFileAtDocumentsDirectory(destinationFileName))
-        if fileManager.fileExists(atPath: destinationURL!.path!){
+        if fileManager.fileExists(atPath: destinationURL!.path){
             do{ try fileManager.removeItem(at: destinationURL!) }
             catch{
                 //Cant save the file. because

@@ -8,12 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		142AE6D71DA9B858006DEC65 /* CXFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 142AE6D51DA9B858006DEC65 /* CXFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */; };
+		14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B491DA9CDB4005194F8 /* CXMail.swift */; };
+		14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B4A1DA9CDB4005194F8 /* CXMap.swift */; };
+		14E64B5D1DA9CDB4005194F8 /* CXPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B4B1DA9CDB4005194F8 /* CXPhone.swift */; };
+		14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B4E1DA9CDB4005194F8 /* CXDownloadInformer.swift */; };
+		14E64B601DA9CDB4005194F8 /* CXFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B4F1DA9CDB4005194F8 /* CXFileDownloader.swift */; };
+		14E64B611DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B501DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift */; };
+		14E64B621DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B511DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift */; };
+		14E64B631DA9CDB4005194F8 /* CXFileDownloadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B521DA9CDB4005194F8 /* CXFileDownloadInfo.swift */; };
+		14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B551DA9CDB4005194F8 /* SocialNetwork.swift */; };
+		14E64B661DA9CDB4005194F8 /* MCX+MKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B571DA9CDB4005194F8 /* MCX+MKPointAnnotation.swift */; };
+		14E64B671DA9CDB4005194F8 /* MCX+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B581DA9CDB4005194F8 /* MCX+UIViewController.swift */; };
+		14E64B681DA9CDB4005194F8 /* MCX+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B591DA9CDB4005194F8 /* MCX+URL.swift */; };
+		14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B691DA9CE94005194F8 /* CXVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		142AE6D21DA9B858006DEC65 /* CXFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CXFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		142AE6D51DA9B858006DEC65 /* CXFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXFramework.h; sourceTree = "<group>"; };
 		142AE6D61DA9B858006DEC65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDataStorage.swift; sourceTree = "<group>"; };
+		14E64B491DA9CDB4005194F8 /* CXMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMail.swift; sourceTree = "<group>"; };
+		14E64B4A1DA9CDB4005194F8 /* CXMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMap.swift; sourceTree = "<group>"; };
+		14E64B4B1DA9CDB4005194F8 /* CXPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXPhone.swift; sourceTree = "<group>"; };
+		14E64B4E1DA9CDB4005194F8 /* CXDownloadInformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDownloadInformer.swift; sourceTree = "<group>"; };
+		14E64B4F1DA9CDB4005194F8 /* CXFileDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXFileDownloader.swift; sourceTree = "<group>"; };
+		14E64B501DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXFileDownloaderDataSource.swift; sourceTree = "<group>"; };
+		14E64B511DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXFileDownloaderDelegate.swift; sourceTree = "<group>"; };
+		14E64B521DA9CDB4005194F8 /* CXFileDownloadInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXFileDownloadInfo.swift; sourceTree = "<group>"; };
+		14E64B551DA9CDB4005194F8 /* SocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
+		14E64B571DA9CDB4005194F8 /* MCX+MKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MCX+MKPointAnnotation.swift"; sourceTree = "<group>"; };
+		14E64B581DA9CDB4005194F8 /* MCX+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MCX+UIViewController.swift"; sourceTree = "<group>"; };
+		14E64B591DA9CDB4005194F8 /* MCX+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MCX+URL.swift"; sourceTree = "<group>"; };
+		14E64B691DA9CE94005194F8 /* CXVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXVideo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +74,56 @@
 		142AE6D41DA9B858006DEC65 /* CXFramework */ = {
 			isa = PBXGroup;
 			children = (
+				14E64B471DA9CDB4005194F8 /* Classes */,
+				14E64B541DA9CDB4005194F8 /* Enum */,
+				14E64B561DA9CDB4005194F8 /* Extension */,
 				142AE6D51DA9B858006DEC65 /* CXFramework.h */,
 				142AE6D61DA9B858006DEC65 /* Info.plist */,
 			);
 			path = CXFramework;
+			sourceTree = "<group>";
+		};
+		14E64B471DA9CDB4005194F8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14E64B691DA9CE94005194F8 /* CXVideo.swift */,
+				14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */,
+				14E64B491DA9CDB4005194F8 /* CXMail.swift */,
+				14E64B4A1DA9CDB4005194F8 /* CXMap.swift */,
+				14E64B4B1DA9CDB4005194F8 /* CXPhone.swift */,
+				14E64B4D1DA9CDB4005194F8 /* Download */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		14E64B4D1DA9CDB4005194F8 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				14E64B4E1DA9CDB4005194F8 /* CXDownloadInformer.swift */,
+				14E64B4F1DA9CDB4005194F8 /* CXFileDownloader.swift */,
+				14E64B501DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift */,
+				14E64B511DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift */,
+				14E64B521DA9CDB4005194F8 /* CXFileDownloadInfo.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		14E64B541DA9CDB4005194F8 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				14E64B551DA9CDB4005194F8 /* SocialNetwork.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		14E64B561DA9CDB4005194F8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				14E64B571DA9CDB4005194F8 /* MCX+MKPointAnnotation.swift */,
+				14E64B581DA9CDB4005194F8 /* MCX+UIViewController.swift */,
+				14E64B591DA9CDB4005194F8 /* MCX+URL.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +170,7 @@
 					142AE6D11DA9B858006DEC65 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = WTWX7KL654;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,6 +207,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */,
+				14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */,
+				14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */,
+				14E64B611DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift in Sources */,
+				14E64B671DA9CDB4005194F8 /* MCX+UIViewController.swift in Sources */,
+				14E64B601DA9CDB4005194F8 /* CXFileDownloader.swift in Sources */,
+				14E64B631DA9CDB4005194F8 /* CXFileDownloadInfo.swift in Sources */,
+				14E64B621DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift in Sources */,
+				14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */,
+				14E64B5D1DA9CDB4005194F8 /* CXPhone.swift in Sources */,
+				14E64B661DA9CDB4005194F8 /* MCX+MKPointAnnotation.swift in Sources */,
+				14E64B681DA9CDB4005194F8 /* MCX+URL.swift in Sources */,
+				14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */,
+				14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +329,7 @@
 		142AE6DB1DA9B858006DEC65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WTWX7KL654;
@@ -252,6 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.macxtter.CXFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -259,6 +350,7 @@
 		142AE6DC1DA9B858006DEC65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WTWX7KL654;
