@@ -22,6 +22,7 @@
 		14E64B671DA9CDB4005194F8 /* MCX+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B581DA9CDB4005194F8 /* MCX+UIViewController.swift */; };
 		14E64B681DA9CDB4005194F8 /* MCX+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B591DA9CDB4005194F8 /* MCX+URL.swift */; };
 		14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B691DA9CE94005194F8 /* CXVideo.swift */; };
+		14E7DC4C1E2C446400E5D5E5 /* CX+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7DC4B1E2C446400E5D5E5 /* CX+UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		14E64B581DA9CDB4005194F8 /* MCX+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MCX+UIViewController.swift"; sourceTree = "<group>"; };
 		14E64B591DA9CDB4005194F8 /* MCX+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MCX+URL.swift"; sourceTree = "<group>"; };
 		14E64B691DA9CE94005194F8 /* CXVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXVideo.swift; sourceTree = "<group>"; };
+		14E7DC4B1E2C446400E5D5E5 /* CX+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		14E64B561DA9CDB4005194F8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				14E7DC4B1E2C446400E5D5E5 /* CX+UIImage.swift */,
 				14E64B571DA9CDB4005194F8 /* MCX+MKPointAnnotation.swift */,
 				14E64B581DA9CDB4005194F8 /* MCX+UIViewController.swift */,
 				14E64B591DA9CDB4005194F8 /* MCX+URL.swift */,
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E7DC4C1E2C446400E5D5E5 /* CX+UIImage.swift in Sources */,
 				14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */,
 				14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */,
 				14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */,
