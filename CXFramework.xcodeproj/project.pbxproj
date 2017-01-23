@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		142AE6D71DA9B858006DEC65 /* CXFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 142AE6D51DA9B858006DEC65 /* CXFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774C61E359AB100D4D1B1 /* GenericFormVC.swift */; };
+		149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774E01E359B0600D4D1B1 /* LoadingView.swift */; };
 		14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */; };
 		14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B491DA9CDB4005194F8 /* CXMail.swift */; };
 		14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B4A1DA9CDB4005194F8 /* CXMap.swift */; };
@@ -29,6 +31,8 @@
 		142AE6D21DA9B858006DEC65 /* CXFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CXFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		142AE6D51DA9B858006DEC65 /* CXFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXFramework.h; sourceTree = "<group>"; };
 		142AE6D61DA9B858006DEC65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149774C61E359AB100D4D1B1 /* GenericFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFormVC.swift; sourceTree = "<group>"; };
+		149774E01E359B0600D4D1B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDataStorage.swift; sourceTree = "<group>"; };
 		14E64B491DA9CDB4005194F8 /* CXMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMail.swift; sourceTree = "<group>"; };
 		14E64B4A1DA9CDB4005194F8 /* CXMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMap.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		142AE6D41DA9B858006DEC65 /* CXFramework */ = {
 			isa = PBXGroup;
 			children = (
+				149774DF1E359B0600D4D1B1 /* Utils */,
 				14E64B471DA9CDB4005194F8 /* Classes */,
 				14E64B541DA9CDB4005194F8 /* Enum */,
 				14E64B561DA9CDB4005194F8 /* Extension */,
@@ -85,9 +90,18 @@
 			path = CXFramework;
 			sourceTree = "<group>";
 		};
+		149774DF1E359B0600D4D1B1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				149774E01E359B0600D4D1B1 /* LoadingView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		14E64B471DA9CDB4005194F8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				149774C61E359AB100D4D1B1 /* GenericFormVC.swift */,
 				14E64B691DA9CE94005194F8 /* CXVideo.swift */,
 				14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */,
 				14E64B491DA9CDB4005194F8 /* CXMail.swift */,
@@ -214,10 +228,12 @@
 				14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */,
 				14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */,
 				14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */,
+				149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */,
 				14E64B611DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift in Sources */,
 				14E64B671DA9CDB4005194F8 /* MCX+UIViewController.swift in Sources */,
 				14E64B601DA9CDB4005194F8 /* CXFileDownloader.swift in Sources */,
 				14E64B631DA9CDB4005194F8 /* CXFileDownloadInfo.swift in Sources */,
+				149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */,
 				14E64B621DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift in Sources */,
 				14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */,
 				14E64B5D1DA9CDB4005194F8 /* CXPhone.swift in Sources */,
