@@ -2,13 +2,13 @@
 //  LoadingView.swift
 //  Cartilla
 //
-//  Created by Diego on 26/05/16.
+//  Created by Mauricio Conde on 26/05/16.
 //  Copyright © 2016 JoseCarlos. All rights reserved.
 //
 
 import UIKit
 
-class LoadingView: UIView {
+public class LoadingView: UIView {
     struct Keys{
         static let loadingWidth = CGFloat(50)
         static let loadingHeight = CGFloat(50)
@@ -20,11 +20,11 @@ class LoadingView: UIView {
     
     
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -36,7 +36,7 @@ class LoadingView: UIView {
     }
     
     /// Shows a loading view above all views
-    static func show(){
+    public static func show(){
         let screenBounds: CGRect = UIScreen.main.bounds
         
         containerView = UIView(frame: screenBounds)
@@ -70,7 +70,7 @@ class LoadingView: UIView {
         }
     }
     
-    static func hide(){
+    public static func hide(){
         indicator.stopAnimating()
         containerView?.removeFromSuperview()
         containerView = nil

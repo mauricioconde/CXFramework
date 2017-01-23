@@ -8,23 +8,23 @@
 import Foundation
 import UIKit
 
-class GenericFormVC: UIViewController {
-    @IBOutlet var scrollView: UIScrollView!
+public class GenericFormVC: UIViewController {
+    @IBOutlet public var scrollView: UIScrollView!
     
     ///The title to be displayed on the Navigation bar
-    var navBarTitle: String = ""
+    public var navBarTitle: String = ""
     ///To keep track which textfield is begin edited and move the view properly
     var activeField: UITextField!
     
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         LoadingView.show()
         super.viewDidLoad()
         configureView()
         LoadingView.hide()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         /// Set the configuration to move the view properly every time the
         /// Keyboard is shown, also configures the view to hide the keyboard when
@@ -33,7 +33,7 @@ class GenericFormVC: UIViewController {
         hideKeyboardOnViewTouch()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let center = NotificationCenter.default
         center.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
@@ -92,7 +92,7 @@ class GenericFormVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    func configureView(){
+    public func configureView(){
         self.navigationItem.title = navBarTitle
     }
 }
@@ -101,11 +101,11 @@ class GenericFormVC: UIViewController {
 
 
 extension GenericFormVC: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
 }
@@ -117,7 +117,7 @@ extension GenericFormVC: UITextFieldDelegate {
 public extension UIViewController {
     
     /// Dismisses the keyboard when touching anywhere outside UITextField
-    func hideKeyboardOnViewTouch() {
+    public func hideKeyboardOnViewTouch() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
@@ -125,7 +125,7 @@ public extension UIViewController {
     /// Causes the view (or one of its embedded text fields) to resign the 1st responder status
     /// - note: if you want to dismiss the keyboard when touching outside UITextField use
     /// 'hideKeyboardOnViewTouch' method instead
-    func hideKeyboard(){
+    public func hideKeyboard(){
         self.view.endEditing(true)
     }
 }
