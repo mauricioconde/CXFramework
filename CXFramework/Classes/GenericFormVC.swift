@@ -101,11 +101,11 @@ open class GenericFormVC: UIViewController {
 
 
 extension GenericFormVC: UITextFieldDelegate {
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
+    open func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
     
-    public func textFieldDidEndEditing(_ textField: UITextField) {
+    open func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
 }
