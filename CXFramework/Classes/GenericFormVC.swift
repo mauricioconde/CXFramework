@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class GenericFormVC: UIViewController {
+open class GenericFormVC: UIViewController {
     @IBOutlet public var scrollView: UIScrollView!
     
     ///The title to be displayed on the Navigation bar
@@ -17,14 +17,14 @@ public class GenericFormVC: UIViewController {
     var activeField: UITextField!
     
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         LoadingView.show()
         super.viewDidLoad()
         configureView()
         LoadingView.hide()
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         /// Set the configuration to move the view properly every time the
         /// Keyboard is shown, also configures the view to hide the keyboard when
@@ -33,7 +33,7 @@ public class GenericFormVC: UIViewController {
         hideKeyboardOnViewTouch()
     }
     
-    override public func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let center = NotificationCenter.default
         center.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
