@@ -92,7 +92,7 @@ open class GenericFormVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    public func configureView(){
+    open func configureView(){
         self.navigationItem.title = navBarTitle
     }
 }
