@@ -11,6 +11,8 @@ import UIKit
 open class GenericFormVC: UIViewController {
     @IBOutlet public var scrollView: UIScrollView!
     
+    /// The
+    public var cxTextfieldDelegate: CXTextFieldDelegate?
     ///The title to be displayed on the Navigation bar
     public var navBarTitle: String = ""
     ///To keep track which textfield is begin edited and move the view properly
@@ -38,6 +40,10 @@ open class GenericFormVC: UIViewController {
         let center = NotificationCenter.default
         center.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    open func configureView(){
+        self.navigationItem.title = navBarTitle
     }
     
     ///Configures the Keyboard notifications to keep track the keyboard behaviour
@@ -92,8 +98,29 @@ open class GenericFormVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    open func configureView(){
-        self.navigationItem.title = navBarTitle
+    func addToolBar(){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.lightGray
+        
+        let doneButton = UIBarButtonItem(title: " Aceptar",
+                                         style: UIBarButtonItemStyle.done,
+                                         target: self,
+                                         action: #selector(self.donePressed))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,
+                                          target: nil,
+                                          action: nil)
+        toolBar.setItems([doneButton,spaceButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        activeField.inputAccessoryView = toolBar
+    }
+    
+    @objc private func donePressed() {
+        activeField.resignFirstResponder()
+        self.cxTextfieldDelegate?.onDonePressed?(activeField)
     }
 }
 
@@ -103,6 +130,7 @@ open class GenericFormVC: UIViewController {
 extension GenericFormVC: UITextFieldDelegate {
     open func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
+        addToolBar()
     }
     
     open func textFieldDidEndEditing(_ textField: UITextField) {
@@ -128,4 +156,11 @@ public extension UIViewController {
     public func hideKeyboard(){
         self.view.endEditing(true)
     }
+}
+
+
+
+// MARK:- CXTextFieldDelegate
+@objc public protocol  CXTextFieldDelegate {
+    @objc optional func onDonePressed(_ textField: UITextField)
 }
