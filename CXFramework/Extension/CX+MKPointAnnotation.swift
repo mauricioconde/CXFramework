@@ -1,6 +1,6 @@
 //
-//  MCX+MKPointAnnotation.swift
-//  MCXFramework
+//  CX+MKPointAnnotation.swift
+//  CXFramework
 //
 //  Created by Mauricio Conde on 02/06/16.
 //  Copyright © 2016 Mauricio Conde. All rights reserved.

@@ -1,12 +1,13 @@
 //
-//  MCX+UIViewController.swift
-//  MCXFramework
+//  CX+UIViewController.swift
+//  CXFramework
 //
 //  Created by Mauricio Conde on 13/09/16.
 //  Copyright © 2016 Mauricio Conde. All rights reserved.
 //
 import UIKit
 
+// MARK:- UINavBar methods
 public extension UIViewController {
     /// ---
     /// Sets an image to the 'leftBarButtonItem' property of the navigation item and
@@ -25,7 +26,7 @@ public extension UIViewController {
         icon = UIImageView(image: image?.resize(width: 30, height: 30))
         icon.alpha = 0.5
         
-        guard let items = self.navigationItem.leftBarButtonItems else{
+        guard self.navigationItem.leftBarButtonItems != nil else{
             let lBarBtnItem = UIBarButtonItem(image: icon.image,
                                               style: UIBarButtonItemStyle.plain,
                                               target: self,
@@ -41,6 +42,7 @@ public extension UIViewController {
     }
 }
 
+// MARK:- Alert related methods
 public extension UIViewController {
     /// ---
     /// Shows a new UIAlertController configured with a title, a message and an array of actions
