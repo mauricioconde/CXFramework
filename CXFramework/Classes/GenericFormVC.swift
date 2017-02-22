@@ -154,7 +154,9 @@ public extension UIViewController {
     /// - note: if you want to dismiss the keyboard when touching outside UITextField use
     /// 'hideKeyboardOnViewTouch' method instead
     public func hideKeyboard(){
-        self.view.endEditing(true)
+        DispatchQueue.main.async {
+            self.view.endEditing(true)
+        }
     }
 }
 
