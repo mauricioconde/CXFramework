@@ -12,6 +12,7 @@
 		144E31521E5E45CC009FE658 /* CX+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31511E5E45CC009FE658 /* CX+UITextView.swift */; };
 		144E31551E5E460A009FE658 /* CX+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31541E5E460A009FE658 /* CX+CALayer.swift */; };
 		144E31571E5E4921009FE658 /* CXUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31561E5E4921009FE658 /* CXUtility.swift */; };
+		144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31581E5E49A8009FE658 /* CX+NSObject.swift */; };
 		149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149711C51E490D0F00F60AFD /* CX+UIApplication.swift */; };
 		149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774C61E359AB100D4D1B1 /* GenericFormVC.swift */; };
 		149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774E01E359B0600D4D1B1 /* LoadingView.swift */; };
@@ -43,6 +44,7 @@
 		144E31511E5E45CC009FE658 /* CX+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UITextView.swift"; sourceTree = "<group>"; };
 		144E31541E5E460A009FE658 /* CX+CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+CALayer.swift"; sourceTree = "<group>"; };
 		144E31561E5E4921009FE658 /* CXUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXUtility.swift; sourceTree = "<group>"; };
+		144E31581E5E49A8009FE658 /* CX+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+NSObject.swift"; sourceTree = "<group>"; };
 		149711C51E490D0F00F60AFD /* CX+UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIApplication.swift"; sourceTree = "<group>"; };
 		149774C61E359AB100D4D1B1 /* GenericFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFormVC.swift; sourceTree = "<group>"; };
 		149774E01E359B0600D4D1B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				144E314F1E5E4573009FE658 /* CX+UILabel.swift */,
 				144E31511E5E45CC009FE658 /* CX+UITextView.swift */,
 				144E31541E5E460A009FE658 /* CX+CALayer.swift */,
+				144E31581E5E49A8009FE658 /* CX+NSObject.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				144E31521E5E45CC009FE658 /* CX+UITextView.swift in Sources */,
 				14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */,
 				14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */,
+				144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */,
 				144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
