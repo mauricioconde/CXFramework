@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		142AE6D71DA9B858006DEC65 /* CXFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 142AE6D51DA9B858006DEC65 /* CXFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E314F1E5E4573009FE658 /* CX+UILabel.swift */; };
+		144E31521E5E45CC009FE658 /* CX+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31511E5E45CC009FE658 /* CX+UITextView.swift */; };
+		144E31551E5E460A009FE658 /* CX+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31541E5E460A009FE658 /* CX+CALayer.swift */; };
 		149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149711C51E490D0F00F60AFD /* CX+UIApplication.swift */; };
 		149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774C61E359AB100D4D1B1 /* GenericFormVC.swift */; };
 		149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774E01E359B0600D4D1B1 /* LoadingView.swift */; };
@@ -35,6 +38,9 @@
 		142AE6D21DA9B858006DEC65 /* CXFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CXFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		142AE6D51DA9B858006DEC65 /* CXFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXFramework.h; sourceTree = "<group>"; };
 		142AE6D61DA9B858006DEC65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144E314F1E5E4573009FE658 /* CX+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UILabel.swift"; sourceTree = "<group>"; };
+		144E31511E5E45CC009FE658 /* CX+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UITextView.swift"; sourceTree = "<group>"; };
+		144E31541E5E460A009FE658 /* CX+CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+CALayer.swift"; sourceTree = "<group>"; };
 		149711C51E490D0F00F60AFD /* CX+UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIApplication.swift"; sourceTree = "<group>"; };
 		149774C61E359AB100D4D1B1 /* GenericFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFormVC.swift; sourceTree = "<group>"; };
 		149774E01E359B0600D4D1B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -151,6 +157,9 @@
 				14E854891E54D1060048EF4F /* CX+UIColor.swift */,
 				14E8548B1E54D88A0048EF4F /* CX+UIView.swift */,
 				14E8548D1E54DD7E0048EF4F /* CX+Date.swift */,
+				144E314F1E5E4573009FE658 /* CX+UILabel.swift */,
+				144E31511E5E45CC009FE658 /* CX+UITextView.swift */,
+				144E31541E5E460A009FE658 /* CX+CALayer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			files = (
 				14E7DC4C1E2C446400E5D5E5 /* CX+UIImage.swift in Sources */,
 				149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */,
+				144E31551E5E460A009FE658 /* CX+CALayer.swift in Sources */,
 				14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */,
 				14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */,
 				14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */,
@@ -255,8 +265,10 @@
 				14E8548A1E54D1060048EF4F /* CX+UIColor.swift in Sources */,
 				14E64B661DA9CDB4005194F8 /* CX+MKPointAnnotation.swift in Sources */,
 				14E64B681DA9CDB4005194F8 /* MCX+URL.swift in Sources */,
+				144E31521E5E45CC009FE658 /* CX+UITextView.swift in Sources */,
 				14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */,
 				14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */,
+				144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
