@@ -43,4 +43,19 @@ public extension UIView{
                             }
         })
     }
+    
+    public func applyGradient(withColors colors:[UIColor], diagonalMode: Bool, horizontalMode: Bool){
+        let layer : CAGradientLayer = CAGradientLayer()
+        layer.frame.size = self.frame.size
+        if horizontalMode {
+            layer.startPoint = diagonalMode ? CGPoint(x: 1, y: 0) : CGPoint(x: 0, y: 0.5)
+            layer.endPoint   = diagonalMode ? CGPoint(x: 0, y: 1) : CGPoint(x: 1, y: 0.5)
+        } else {
+            layer.startPoint = diagonalMode ? CGPoint(x: 0, y: 0) : CGPoint(x: 0.5, y: 0)
+            layer.endPoint   = diagonalMode ? CGPoint(x: 1, y: 1) : CGPoint(x: 0.5, y: 1)
+        }
+        layer.locations = [ 0.0, 1.0]//
+        layer.colors = colors
+        self.layer.addSublayer(layer)
+    }
 }
