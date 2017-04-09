@@ -40,6 +40,28 @@ public extension UIViewController {
         lBarBtnItem.target = target != nil ? target : self
         lBarBtnItem.action = action
     }
+    
+    public func configureImagesForLeftBarButtons(imgNames: [String],
+                                                 target: AnyObject?,
+                                                 actions: [Selector]) {
+        guard imgNames.count == actions.count else {
+            return
+        }
+        
+        var icon: UIImageView!
+        var buttons: [UIBarButtonItem] = []
+        for(index,imgName) in imgNames.enumerated() {
+            let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            icon = UIImageView(image: image?.resize(width: 30, height: 30))
+            icon.alpha = 0.5
+            buttons.append(UIBarButtonItem(image: icon.image,
+                                               style: UIBarButtonItemStyle.plain,
+                                               target: self,
+                                               action: actions[index]))
+        }
+        
+        self.navigationItem.leftBarButtonItems = buttons
+    }
 }
 
 // MARK:- Alert related methods
