@@ -41,6 +41,38 @@ public extension UIViewController {
         lBarBtnItem.action = action
     }
     
+    /// ---
+    /// Sets an image to the 'rightBarButtonItem' property of the navigation item and
+    /// configures it with the specified action and target
+    ///
+    /// - parameters:
+    ///     - imgName: The image name
+    ///     - target: The object that receives the action message.
+    ///     - action: The action to send to target when this item is selected.
+    public func configureImageForRightBarButtonItem(imgName: String,
+                                                   target: AnyObject?,
+                                                   action: Selector){
+        var icon: UIImageView!
+        
+        let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        icon = UIImageView(image: image?.resize(width: 30, height: 30))
+        icon.alpha = 0.5
+        
+        guard self.navigationItem.leftBarButtonItems != nil else{
+            let rBarBtnItem = UIBarButtonItem(image: icon.image,
+                                              style: UIBarButtonItemStyle.plain,
+                                              target: self,
+                                              action: action)
+            self.navigationItem.leftBarButtonItem = rBarBtnItem
+            return
+        }
+        
+        let rBarBtnItem: UIBarButtonItem = self.navigationItem.leftBarButtonItems!.first!
+        rBarBtnItem.customView = icon
+        rBarBtnItem.target = target != nil ? target : self
+        rBarBtnItem.action = action
+    }
+    
     public func configureImagesForLeftBarButtons(imgNames: [String],
                                                  target: AnyObject?,
                                                  actions: [Selector]) {
@@ -55,9 +87,9 @@ public extension UIViewController {
             icon = UIImageView(image: image?.resize(width: 30, height: 30))
             icon.alpha = 0.5
             buttons.append(UIBarButtonItem(image: icon.image,
-                                               style: UIBarButtonItemStyle.plain,
-                                               target: self,
-                                               action: actions[index]))
+                                           style: UIBarButtonItemStyle.plain,
+                                           target: self,
+                                           action: actions[index]))
         }
         
         self.navigationItem.leftBarButtonItems = buttons
