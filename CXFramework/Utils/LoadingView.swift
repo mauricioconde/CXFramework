@@ -64,7 +64,10 @@ public class LoadingView: UIView {
         loadingLbl.textAlignment = NSTextAlignment.center
         loadingView.addSubview(loadingLbl)
         
-        guard view != nil else {
+        guard view == nil else {
+            view?.addSubview(containerView)
+            view?.addSubview(loadingView)
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             return
         }
         if let w = UIApplication.shared.delegate?.window{
@@ -74,19 +77,14 @@ public class LoadingView: UIView {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
             }
         }
-        view?.addSubview(containerView)
-        view?.addSubview(loadingView)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     public static func hide(){
         indicator.stopAnimating()
         containerView?.removeFromSuperview()
         containerView = nil
-        indicator?.removeFromSuperview()
-        indicator = nil
-        loadingLbl?.removeFromSuperview()
-        loadingLbl = nil
+        loadingView?.removeFromSuperview()
+        loadingView = nil
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
