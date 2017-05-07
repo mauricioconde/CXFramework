@@ -10,10 +10,11 @@ import UIKit
 
 public class LoadingView: UIView {
     struct Keys{
-        static let loadingWidth = CGFloat(50)
-        static let loadingHeight = CGFloat(50)
+        static let loadingWidth = CGFloat(100)
+        static let loadingHeight = CGFloat(100)
     }
     static var indicator: UIActivityIndicatorView!
+    static var loadingView: UIView!
     static var loadingLbl: UILabel!
     static var containerView: UIView!
     
@@ -28,46 +29,54 @@ public class LoadingView: UIView {
         super.init(coder: aDecoder)
     }
     
-    //MARK:- Static methods
-    
-    //Temporal fix until the refactor is completed
-    static func show(view: UIView){
-        LoadingView.show()
-    }
-    
+    // MARK:- Static methods
     /// Shows a loading view above all views
-    public static func show(){
-        let screenBounds: CGRect = UIScreen.main.bounds
+    public static func show(on view: UIView? = nil){
+        let screenBounds: CGRect = view != nil ? view!.bounds : UIScreen.main.bounds
         
         containerView = UIView(frame: screenBounds)
         containerView.backgroundColor = UIColor.black
         containerView.alpha = 0.5
         
-        let frame = CGRect(x: (screenBounds.width - Keys.loadingWidth) / 2,
-                           y: (screenBounds.height - Keys.loadingHeight) / 2,
-                           width: Keys.loadingWidth,
-                           height: Keys.loadingHeight)
-        indicator = UIActivityIndicatorView(frame: frame)
-        indicator.alpha = 0.5
+        loadingView = UIView(frame: CGRect(x: (screenBounds.width - Keys.loadingWidth) / 2,
+                                               y: (screenBounds.height - Keys.loadingHeight) / 2,
+                                               width: Keys.loadingWidth,
+                                               height: Keys.loadingHeight))
+        loadingView.layer.cornerRadius = 15
+        loadingView.backgroundColor = UIColor.white
+        loadingView.alpha = 0.8
         
-        loadingLbl = UILabel(frame: CGRect(x: (screenBounds.width - 140.0) / 2,
-                                           y: screenBounds.height / 2 - Keys.loadingHeight,
-                                           width: 140.0,
-                                           height: 21.0))
+        indicator = UIActivityIndicatorView(frame: CGRect(x: (loadingView.bounds.size.width - 60) / 2,
+                                                          y: (loadingView.bounds.size.height - 70) / 2,
+                                                          width: 60,
+                                                          height: 60))
+        indicator.startAnimating()
+        indicator.color = UIColor.black
+        loadingView.addSubview(indicator)
+        
+        loadingLbl = UILabel(frame: CGRect(x: 0,
+                                           y: Keys.loadingHeight - 30,
+                                           width: Keys.loadingWidth,
+                                           height: 20.0))
         loadingLbl.text = "Cargando..."
-        loadingLbl.textColor = UIColor.white
+        loadingLbl.font.withSize(8)
+        loadingLbl.textColor = UIColor.gray
         loadingLbl.textAlignment = NSTextAlignment.center
+        loadingView.addSubview(loadingLbl)
         
+        guard view != nil else {
+            return
+        }
         if let w = UIApplication.shared.delegate?.window{
-            if let window = w{
-                loadingLbl.center = window.center
+            if let window = w {
                 window.addSubview(containerView)
-                window.addSubview(indicator)
-                window.addSubview(loadingLbl)
-                indicator.startAnimating()
+                window.addSubview(loadingView)
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
             }
         }
+        view?.addSubview(containerView)
+        view?.addSubview(loadingView)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     public static func hide(){
