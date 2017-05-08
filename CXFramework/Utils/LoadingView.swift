@@ -59,8 +59,8 @@ public class LoadingView: UIView {
                                            width: Keys.loadingWidth,
                                            height: 20.0))
         loadingLbl.text = "Cargando..."
-        loadingLbl.font.withSize(8)
         loadingLbl.textColor = UIColor.gray
+        loadingLbl.font = UIFont.boldSystemFont(ofSize: 8.0)
         loadingLbl.textAlignment = NSTextAlignment.center
         loadingView.addSubview(loadingLbl)
         
@@ -74,6 +74,27 @@ public class LoadingView: UIView {
             if let window = w {
                 window.addSubview(containerView)
                 window.addSubview(loadingView)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            }
+        }
+    }
+    
+    /// Add a semi transparent black view
+    public static func showMask(above view: UIView? = nil) {
+        let screenBounds: CGRect = view != nil ? view!.bounds : UIScreen.main.bounds
+        
+        containerView = UIView(frame: screenBounds)
+        containerView.backgroundColor = UIColor.black
+        containerView.alpha = 0.5
+        
+        guard view == nil else {
+            view?.addSubview(containerView)
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            return
+        }
+        if let w = UIApplication.shared.delegate?.window{
+            if let window = w {
+                window.addSubview(containerView)
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
             }
         }
