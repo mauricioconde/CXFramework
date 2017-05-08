@@ -58,16 +58,16 @@ public extension UIViewController {
         icon = UIImageView(image: image?.resize(width: 30, height: 30))
         icon.alpha = 0.5
         
-        guard self.navigationItem.leftBarButtonItems != nil else{
+        guard self.navigationItem.rightBarButtonItems != nil else{
             let rBarBtnItem = UIBarButtonItem(image: icon.image,
                                               style: UIBarButtonItemStyle.plain,
                                               target: self,
                                               action: action)
-            self.navigationItem.leftBarButtonItem = rBarBtnItem
+            self.navigationItem.rightBarButtonItem = rBarBtnItem
             return
         }
         
-        let rBarBtnItem: UIBarButtonItem = self.navigationItem.leftBarButtonItems!.first!
+        let rBarBtnItem: UIBarButtonItem = self.navigationItem.rightBarButtonItems!.first!
         rBarBtnItem.customView = icon
         rBarBtnItem.target = target != nil ? target : self
         rBarBtnItem.action = action
@@ -91,7 +91,6 @@ public extension UIViewController {
                                            target: self,
                                            action: actions[index]))
         }
-        
         self.navigationItem.leftBarButtonItems = buttons
     }
 }
@@ -169,5 +168,25 @@ public extension UIViewController {
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK:- Navigation related methods
+extension UIViewController {
+    
+    public func closeVC() {
+        guard self.navigationController != nil else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        navigationController!.popViewController(animated: true)
+    }
+    
+    public func presentVC(_ vc: UIViewController) {
+        guard self.navigationController != nil else {
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }

@@ -16,6 +16,7 @@
 		149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149711C51E490D0F00F60AFD /* CX+UIApplication.swift */; };
 		149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774C61E359AB100D4D1B1 /* GenericFormVC.swift */; };
 		149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774E01E359B0600D4D1B1 /* LoadingView.swift */; };
+		14D539A11EBFFD4D00DE6D38 /* CX+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D539A01EBFFD4C00DE6D38 /* CX+UITableView.swift */; };
 		14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */; };
 		14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B491DA9CDB4005194F8 /* CXMail.swift */; };
 		14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B4A1DA9CDB4005194F8 /* CXMap.swift */; };
@@ -48,6 +49,7 @@
 		149711C51E490D0F00F60AFD /* CX+UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIApplication.swift"; sourceTree = "<group>"; };
 		149774C61E359AB100D4D1B1 /* GenericFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFormVC.swift; sourceTree = "<group>"; };
 		149774E01E359B0600D4D1B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		14D539A01EBFFD4C00DE6D38 /* CX+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UITableView.swift"; sourceTree = "<group>"; };
 		14E64B481DA9CDB4005194F8 /* CXDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDataStorage.swift; sourceTree = "<group>"; };
 		14E64B491DA9CDB4005194F8 /* CXMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMail.swift; sourceTree = "<group>"; };
 		14E64B4A1DA9CDB4005194F8 /* CXMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMap.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				144E31511E5E45CC009FE658 /* CX+UITextView.swift */,
 				144E31541E5E460A009FE658 /* CX+CALayer.swift */,
 				144E31581E5E49A8009FE658 /* CX+NSObject.swift */,
+				14D539A01EBFFD4C00DE6D38 /* CX+UITableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				14E8548C1E54D88A0048EF4F /* CX+UIView.swift in Sources */,
 				14E64B631DA9CDB4005194F8 /* CXFileDownloadInfo.swift in Sources */,
 				144E31571E5E4921009FE658 /* CXUtility.swift in Sources */,
+				14D539A11EBFFD4D00DE6D38 /* CX+UITableView.swift in Sources */,
 				149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */,
 				14E64B621DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift in Sources */,
 				14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */,

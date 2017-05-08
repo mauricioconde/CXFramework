@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// MARK:- Transition methods
 public extension UIView{
     public static func performCurlAnimation(fromView: UIView,
                                             toView:UIView,
@@ -42,5 +43,18 @@ public extension UIView{
                                 }
                             }
         })
+    }
+}
+
+// MARK:- Style methods
+public extension UIView {
+    
+    /// Adds a gradient color effect
+    public func addGradient(fromColor: UIColor, toColor: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [ fromColor.cgColor, toColor.cgColor]
+        gradientLayer.locations = [ 0.0, 1.0]
+        gradientLayer.frame = self.bounds
+        self.layer.addSublayer(gradientLayer)
     }
 }
