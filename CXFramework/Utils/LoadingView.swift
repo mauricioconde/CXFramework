@@ -60,7 +60,7 @@ public class LoadingView: UIView {
                                            height: 20.0))
         loadingLbl.text = "Cargando..."
         loadingLbl.textColor = UIColor.gray
-        loadingLbl.font = UIFont.boldSystemFont(ofSize: 8.0)
+        loadingLbl.font = UIFont.boldSystemFont(ofSize: 10.0)
         loadingLbl.textAlignment = NSTextAlignment.center
         loadingView.addSubview(loadingLbl)
         
