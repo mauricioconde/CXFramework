@@ -35,6 +35,7 @@
 		14E8548A1E54D1060048EF4F /* CX+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E854891E54D1060048EF4F /* CX+UIColor.swift */; };
 		14E8548C1E54D88A0048EF4F /* CX+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8548B1E54D88A0048EF4F /* CX+UIView.swift */; };
 		14E8548E1E54DD7E0048EF4F /* CX+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8548D1E54DD7E0048EF4F /* CX+Date.swift */; };
+		14F835C21EC8E2AC006D4AB8 /* CX+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		14E854891E54D1060048EF4F /* CX+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIColor.swift"; sourceTree = "<group>"; };
 		14E8548B1E54D88A0048EF4F /* CX+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIView.swift"; sourceTree = "<group>"; };
 		14E8548D1E54DD7E0048EF4F /* CX+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+Date.swift"; sourceTree = "<group>"; };
+		14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UICollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				144E31541E5E460A009FE658 /* CX+CALayer.swift */,
 				144E31581E5E49A8009FE658 /* CX+NSObject.swift */,
 				14D539A01EBFFD4C00DE6D38 /* CX+UITableView.swift */,
+				14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				14E7DC4C1E2C446400E5D5E5 /* CX+UIImage.swift in Sources */,
 				149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */,
 				144E31551E5E460A009FE658 /* CX+CALayer.swift in Sources */,
+				14F835C21EC8E2AC006D4AB8 /* CX+UICollectionView.swift in Sources */,
 				14E64B5B1DA9CDB4005194F8 /* CXMail.swift in Sources */,
 				14E64B5A1DA9CDB4005194F8 /* CXDataStorage.swift in Sources */,
 				14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */,

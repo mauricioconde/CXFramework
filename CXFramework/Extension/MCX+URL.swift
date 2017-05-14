@@ -11,10 +11,13 @@ import Foundation
 public extension URL {    
     /// Opens the specified link into the phone's browser
     ///
-    /// - parameters: 
+    /// - parameters:
     ///     - url: The URL link
-    public static func openLink(_ url:String){
-        let nsurl = URL(string:url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
-        UIApplication.shared.openURL(nsurl)
+    public static func openLink(_ str:String){
+        guard let strURL = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
+            let url = URL(string: strURL) else {
+                return
+        }
+        UIApplication.shared.openURL(url)
     }    
 }
