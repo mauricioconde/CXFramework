@@ -8,12 +8,13 @@
 
 import Foundation
 
-public extension URL {    
+public extension URL {
+    
     /// Opens the specified link into the phone's browser
     ///
     /// - parameters:
     ///     - url: The URL link
-    public static func openLink(_ str:String){
+    public static func cx_openLink(_ str:String) {
         guard let strURL = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
             let url = URL(string: strURL) else {
                 return

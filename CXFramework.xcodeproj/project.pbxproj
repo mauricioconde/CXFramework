@@ -31,7 +31,7 @@
 		14E64B651DA9CDB4005194F8 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B551DA9CDB4005194F8 /* SocialNetwork.swift */; };
 		14E64B661DA9CDB4005194F8 /* CX+MKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B571DA9CDB4005194F8 /* CX+MKPointAnnotation.swift */; };
 		14E64B671DA9CDB4005194F8 /* CX+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B581DA9CDB4005194F8 /* CX+UIViewController.swift */; };
-		14E64B681DA9CDB4005194F8 /* MCX+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B591DA9CDB4005194F8 /* MCX+URL.swift */; };
+		14E64B681DA9CDB4005194F8 /* CX+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B591DA9CDB4005194F8 /* CX+URL.swift */; };
 		14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E64B691DA9CE94005194F8 /* CXVideo.swift */; };
 		14E7DC4C1E2C446400E5D5E5 /* CX+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E7DC4B1E2C446400E5D5E5 /* CX+UIImage.swift */; };
 		14E8548A1E54D1060048EF4F /* CX+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E854891E54D1060048EF4F /* CX+UIColor.swift */; };
@@ -67,7 +67,7 @@
 		14E64B551DA9CDB4005194F8 /* SocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
 		14E64B571DA9CDB4005194F8 /* CX+MKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+MKPointAnnotation.swift"; sourceTree = "<group>"; };
 		14E64B581DA9CDB4005194F8 /* CX+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIViewController.swift"; sourceTree = "<group>"; };
-		14E64B591DA9CDB4005194F8 /* MCX+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MCX+URL.swift"; sourceTree = "<group>"; };
+		14E64B591DA9CDB4005194F8 /* CX+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+URL.swift"; sourceTree = "<group>"; };
 		14E64B691DA9CE94005194F8 /* CXVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXVideo.swift; sourceTree = "<group>"; };
 		14E7DC4B1E2C446400E5D5E5 /* CX+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIImage.swift"; sourceTree = "<group>"; };
 		14E854891E54D1060048EF4F /* CX+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIColor.swift"; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			children = (
 				14E7DC4B1E2C446400E5D5E5 /* CX+UIImage.swift */,
 				14E64B571DA9CDB4005194F8 /* CX+MKPointAnnotation.swift */,
-				14E64B591DA9CDB4005194F8 /* MCX+URL.swift */,
+				14E64B591DA9CDB4005194F8 /* CX+URL.swift */,
 				14E64B581DA9CDB4005194F8 /* CX+UIViewController.swift */,
 				149711C51E490D0F00F60AFD /* CX+UIApplication.swift */,
 				14E854891E54D1060048EF4F /* CX+UIColor.swift */,
@@ -285,7 +285,7 @@
 				14E8548E1E54DD7E0048EF4F /* CX+Date.swift in Sources */,
 				14E8548A1E54D1060048EF4F /* CX+UIColor.swift in Sources */,
 				14E64B661DA9CDB4005194F8 /* CX+MKPointAnnotation.swift in Sources */,
-				14E64B681DA9CDB4005194F8 /* MCX+URL.swift in Sources */,
+				14E64B681DA9CDB4005194F8 /* CX+URL.swift in Sources */,
 				144E31521E5E45CC009FE658 /* CX+UITextView.swift in Sources */,
 				14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */,
 				14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */,
