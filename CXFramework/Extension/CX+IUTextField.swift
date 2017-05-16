@@ -16,7 +16,7 @@ public extension UITextField {
     ///     - title: The title for the **done** button
     ///     - tintColor: The buttton tint color
     ///     - andAction: The action to be performed once the **done** button is tapped
-    public func addDoneToolBarWith(title: String, tintColor: UIColor? = nil, andAction action: Selector){
+    public func cx_addDoneToolBarWith(title: String, tintColor: UIColor? = nil, andAction action: Selector){
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true

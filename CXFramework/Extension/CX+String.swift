@@ -11,7 +11,7 @@ import UIKit
 public extension String {
     
     /// Calculate the width of a text string of a specific font and font-size
-    public func getPreferredSize(withFont font: UIFont) -> CGSize {
+    public func cx_getPreferredSize(withFont font: UIFont) -> CGSize {
         return (self as NSString).size(attributes: [NSFontAttributeName: font])
     }
 }

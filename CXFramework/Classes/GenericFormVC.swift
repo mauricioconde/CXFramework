@@ -130,7 +130,7 @@ open class GenericFormVC: UIViewController {
 extension GenericFormVC: UITextFieldDelegate {
     open func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
-        activeField.addDoneToolBarWith(title: " Aceptar", andAction: #selector(self.donePressed))
+        activeField.cx_addDoneToolBarWith(title: " Aceptar", andAction: #selector(self.donePressed))
         //addToolBar()
     }
     
