@@ -10,9 +10,10 @@ import UIKit
 
 // MARK:- Transition methods
 public extension UIApplication{
+    
     /// ---
     /// Changes the application current root view controller with the specified by 'vc' animated
-    public static func changeRootViewController(vc: UIViewController) {
+    public static func cx_changeRootViewController(vc: UIViewController) {
         guard let appDelegate = UIApplication.shared.delegate else{
             return
         }
@@ -39,7 +40,7 @@ public extension UIApplication{
     /// ---
     /// Changes the application current root view controller with the specified by 'vc'
     /// with a crossDisolve animation
-    public func changeRootVCAnimated(vc: UIViewController){
+    public func cx_changeRootVCAnimated(vc: UIViewController) {
         guard let appDelegate = UIApplication.shared.delegate else{
             return
         }

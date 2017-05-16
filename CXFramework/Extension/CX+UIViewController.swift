@@ -9,6 +9,7 @@ import UIKit
 
 // MARK:- UINavBar methods
 public extension UIViewController {
+    
     /// ---
     /// Sets an image to the 'leftBarButtonItem' property of the navigation item and
     /// configures it with the specified action and target
@@ -17,13 +18,13 @@ public extension UIViewController {
     ///     - imgName: The image name
     ///     - target: The object that receives the action message.
     ///     - action: The action to send to target when this item is selected.
-    public func configureImageForLeftBarButtonItem(imgName: String,
-                                                   target: AnyObject?,
-                                                   action: Selector){
+    public func cx_configureImageForLeftBarButtonItem(imgName: String,
+                                                      target: AnyObject?,
+                                                      action: Selector){
         var icon: UIImageView!
         
         let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        icon = UIImageView(image: image?.resize(width: 30, height: 30))
+        icon = UIImageView(image: image?.cx_resize(width: 30, height: 30))
         icon.alpha = 0.5
         
         guard self.navigationItem.leftBarButtonItems != nil else{
@@ -49,13 +50,13 @@ public extension UIViewController {
     ///     - imgName: The image name
     ///     - target: The object that receives the action message.
     ///     - action: The action to send to target when this item is selected.
-    public func configureImageForRightBarButtonItem(imgName: String,
-                                                   target: AnyObject?,
-                                                   action: Selector){
+    public func cx_configureImageForRightBarButtonItem(imgName: String,
+                                                       target: AnyObject?,
+                                                       action: Selector){
         var icon: UIImageView!
         
         let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        icon = UIImageView(image: image?.resize(width: 30, height: 30))
+        icon = UIImageView(image: image?.cx_resize(width: 30, height: 30))
         icon.alpha = 0.5
         
         guard self.navigationItem.rightBarButtonItems != nil else{
@@ -73,9 +74,9 @@ public extension UIViewController {
         rBarBtnItem.action = action
     }
     
-    public func configureImagesForLeftBarButtons(imgNames: [String],
-                                                 target: AnyObject?,
-                                                 actions: [Selector]) {
+    public func cx_configureImagesForLeftBarButtons(imgNames: [String],
+                                                    target: AnyObject?,
+                                                    actions: [Selector]) {
         guard imgNames.count == actions.count else {
             return
         }
@@ -84,7 +85,7 @@ public extension UIViewController {
         var buttons: [UIBarButtonItem] = []
         for(index,imgName) in imgNames.enumerated() {
             let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-            icon = UIImageView(image: image?.resize(width: 30, height: 30))
+            icon = UIImageView(image: image?.cx_resize(width: 30, height: 30))
             icon.alpha = 0.5
             buttons.append(UIBarButtonItem(image: icon.image,
                                            style: UIBarButtonItemStyle.plain,
@@ -105,10 +106,10 @@ public extension UIViewController {
     ///     - message: The alert's message
     ///     - actions: An array of UIAlertAction to attach to the Alert
     ///     - style: Optional value to specify the alert style. Default .ActionSheet
-    public func showAlertWithActions(title: String?,
-                                     message: String?,
-                                     actions: [UIAlertAction],
-                                     style: UIAlertControllerStyle = .actionSheet){
+    public func cx_showAlertWithActions(title: String?,
+                                        message: String?,
+                                        actions: [UIAlertAction],
+                                        style: UIAlertControllerStyle = .actionSheet){
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: style)
@@ -127,7 +128,7 @@ public extension UIViewController {
     ///     - title: The harcoded corresponding to the Title to be displayed
     ///     - message: The harcoded corresponding to the Message to be displayed
     ///     - okAction: The callback to be executed when the 'OK' button is pressed
-    public func showAlert(withTitle title: String?, message: String, okAction: (()->Void)?){
+    public func cx_showAlert(withTitle title: String?, message: String, okAction: (()->Void)?){
         let alert = UIAlertController(title: (title != nil) ? title : nil,
                                       message: message,
                                       preferredStyle: UIAlertControllerStyle.alert)
@@ -149,9 +150,9 @@ public extension UIViewController {
     ///     - title: The harcoded corresponding to the Title to be displayed
     ///     - message: The harcoded corresponding to the Message to be displayed
     ///     - okAction: The callback to be executed when the 'OK' button is pressed
-    public func showOkCancelAlert(withTitle title: String?,
-                                  message: String,
-                                  okAction: (()->Void)?){
+    public func cx_showOkCancelAlert(withTitle title: String?,
+                                     message: String,
+                                     okAction: (()->Void)?){
         let alert = UIAlertController(title: (title != nil) ? title : nil,
                                       message: message,
                                       preferredStyle: UIAlertControllerStyle.alert)
@@ -174,7 +175,7 @@ public extension UIViewController {
 // MARK:- Navigation related methods
 extension UIViewController {
     
-    public func closeVC() {
+    public func cx_closeVC() {
         guard self.navigationController != nil else {
             self.dismiss(animated: true, completion: nil)
             return
@@ -182,7 +183,7 @@ extension UIViewController {
         navigationController!.popViewController(animated: true)
     }
     
-    public func presentVC(_ vc: UIViewController) {
+    public func cx_presentVC(_ vc: UIViewController) {
         guard self.navigationController != nil else {
             self.present(vc, animated: true, completion: nil)
             return

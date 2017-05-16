@@ -47,9 +47,9 @@ public enum SocialNetwork {
     fileprivate func openLink(_ scheme: String, page: String){
         let nsurl = URL(string:scheme.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         if UIApplication.shared.canOpenURL(nsurl) {
-            URL.openLink(scheme)
+            URL.cx_openLink(scheme)
         }else{
-            URL.openLink(page)
+            URL.cx_openLink(page)
         }
     }
 }

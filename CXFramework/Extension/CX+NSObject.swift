@@ -13,7 +13,7 @@ public extension NSObject {
     /// ---
     /// Holds the object class name as String.
     /// Also you could use 'CXUtility.classNameAsString(_ obj: Any) -> String'
-    public var theClassName: String {
+    public var cx_className: String {
         return NSStringFromClass(type(of: self))
     }
 }

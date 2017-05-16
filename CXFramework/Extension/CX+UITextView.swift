@@ -9,8 +9,9 @@
 import Foundation
 
 public extension UITextView {
+    
     /// Justifies the text only if the UILabel already has a text otherwise no action is performed
-    public func justifYText() {
+    public func cx_justifYText() {
         guard let text = self.text else {return}
         
         let paragraphStyle = NSMutableParagraphStyle()
