@@ -281,8 +281,9 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
         
         if error != nil {
             print("Download completed with error")
-            print(error?.localizedDescription)
-            
+            if let e = error?.localizedDescription {
+                print(e)
+            }
         }else{
             print("Download finished successfully.")
         }
