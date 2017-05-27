@@ -40,10 +40,12 @@ public class CXVideo {
             self.player = AVPlayer(url: videoURL)
             
             //set observer to catch device orientation changes
-            NotificationCenter.default.addObserver(self,
-                                                             selector: #selector(CXPlayerLayer.orientationChanged),
-                                                             name: NSNotification.Name.UIDeviceOrientationDidChange,
-                                                             object: UIDevice.current)
+            NotificationCenter
+                .default
+                .addObserver(self,
+                             selector: #selector(CXPlayerLayer.orientationChanged),
+                             name: NSNotification.Name.UIDeviceOrientationDidChange,
+                             object: UIDevice.current)
         }
         
         required public init?(coder aDecoder: NSCoder) {
