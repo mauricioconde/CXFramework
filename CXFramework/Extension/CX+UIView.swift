@@ -11,10 +11,11 @@ import UIKit
 
 // MARK:- Transition methods
 public extension UIView{
-    public static func performCurlAnimation(fromView: UIView,
-                                            toView:UIView,
-                                            curpUp: Bool,
-                                            completion: (()->Void)?){
+    
+    public static func cx_performCurlAnimation(fromView: UIView,
+                                               toView:UIView,
+                                               curpUp: Bool,
+                                               completion: (()->Void)?){
         var animation = UIViewAnimationOptions.transitionCurlUp
         if !curpUp{
             animation = UIViewAnimationOptions.transitionCurlDown
@@ -31,7 +32,7 @@ public extension UIView{
         })
     }
     
-    public static func performTransitionAnimation(fromView: UIView, toView:UIView, completion: (()->Void)?){
+    public static func cx_performTransitionAnimation(fromView: UIView, toView:UIView, completion: (()->Void)?){
         UIView.transition(from: fromView,
                           to: toView,
                           duration: 0.5,
@@ -44,17 +45,35 @@ public extension UIView{
                             }
         })
     }
+    
 }
 
 // MARK:- Style methods
 public extension UIView {
     
-    /// Adds a gradient color effect
-    public func addGradient(fromColor: UIColor, toColor: UIColor) {
+    /// Adds an horizontal gradient color effect
+    public func cx_addGradient(fromColor: UIColor, toColor: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [ fromColor.cgColor, toColor.cgColor]
         gradientLayer.locations = [ 0.0, 1.0]
         gradientLayer.frame = self.bounds
         self.layer.addSublayer(gradientLayer)
+    }
+    
+    /// Adds a gradient color effect
+    public func cx_applyGradientWith(colors:[UIColor], diagonalMode: Bool, horizontalMode: Bool){
+        let layer = CAGradientLayer()
+        layer.frame = self.bounds
+        
+        if horizontalMode {
+            layer.startPoint = diagonalMode ? CGPoint(x: 1, y: 0) : CGPoint(x: 0, y: 0.5)
+            layer.endPoint   = diagonalMode ? CGPoint(x: 0, y: 1) : CGPoint(x: 1, y: 0.5)
+        } else {
+            layer.startPoint = diagonalMode ? CGPoint(x: 0, y: 0) : CGPoint(x: 0.5, y: 0)
+            layer.endPoint   = diagonalMode ? CGPoint(x: 1, y: 1) : CGPoint(x: 0.5, y: 1)
+        }
+        layer.locations = [ 0.0, 1.0]
+        layer.colors = colors
+        self.layer.addSublayer(layer)
     }
 }

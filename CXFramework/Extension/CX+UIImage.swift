@@ -17,7 +17,7 @@ public extension UIImage {
     ///     - height: The new image height
     ///
     /// - returns: A new UIImage object with the specified dimensions
-    public func resize(width : CGFloat, height : CGFloat)-> UIImage!{
+    public func cx_resize(width : CGFloat, height : CGFloat)-> UIImage! {
         UIGraphicsBeginImageContext(CGSize(width: width, height: height))
         self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()

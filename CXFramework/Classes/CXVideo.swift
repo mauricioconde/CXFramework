@@ -60,9 +60,9 @@ public class CXVideo {
         /// Sets the layer to full screen
         public func setFullScreen(){
             self.frame = CGRect(x: 0,
-                                    y: 0,
-                                    width: UIScreen.main.bounds.size.width,
-                                    height: UIScreen.main.bounds.size.height)
+                                y: 0,
+                                width: UIScreen.main.bounds.size.width,
+                                height: UIScreen.main.bounds.size.height)
             self.layoutIfNeeded()
         }
         
@@ -74,7 +74,7 @@ public class CXVideo {
                 frame = myFrame
                 self.layoutIfNeeded()
             }else if(orientation == UIDeviceOrientation.landscapeLeft ||
-                    orientation == UIDeviceOrientation.landscapeRight){
+                orientation == UIDeviceOrientation.landscapeRight){
                 self.setFullScreen()
             }
         }

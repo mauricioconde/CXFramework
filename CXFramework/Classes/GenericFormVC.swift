@@ -98,7 +98,7 @@ open class GenericFormVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    func addToolBar(){
+    /*func addToolBar(){
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
@@ -116,9 +116,9 @@ open class GenericFormVC: UIViewController {
         toolBar.sizeToFit()
         
         activeField.inputAccessoryView = toolBar
-    }
+    }*/
     
-    @objc private func donePressed() {
+    @objc fileprivate func donePressed() {
         activeField.resignFirstResponder()
         self.cxTextfieldDelegate?.onDonePressed?(activeField)
     }
@@ -130,7 +130,8 @@ open class GenericFormVC: UIViewController {
 extension GenericFormVC: UITextFieldDelegate {
     open func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
-        addToolBar()
+        activeField.cx_addDoneToolBarWith(title: " Aceptar", andAction: #selector(self.donePressed))
+        //addToolBar()
     }
     
     open func textFieldDidEndEditing(_ textField: UITextField) {
