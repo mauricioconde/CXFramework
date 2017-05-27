@@ -24,11 +24,11 @@ public extension UITableView {
     ///     - font: The font to use for the title
     ///     - target: The object that receives the action message.
     ///     - action: The action to send to target when the refresh control is active
-    public func configureRefreshCtrlWith(title: String,
-                                         color: UIColor,
-                                         font: UIFont? = nil,
-                                         target: AnyObject,
-                                         and action: Selector) -> UIRefreshControl {
+    public func cx_configureRefreshCtrlWith(title: String,
+                                            color: UIColor,
+                                            font: UIFont? = nil,
+                                            target: AnyObject,
+                                            and action: Selector) -> UIRefreshControl {
         
         let theFont = font != nil ? font! : UIFont.systemFont(ofSize: 12.0)
         let attributes = [NSForegroundColorAttributeName: color,
