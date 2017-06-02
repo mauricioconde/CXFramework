@@ -12,7 +12,7 @@ public typealias Edges = (ne: CLLocationCoordinate2D, sw: CLLocationCoordinate2D
 public extension MKMapView {
     
     /// Returns the current edges visibles on screen 
-    var cxEdgePoints: Edges {
+    public var cxEdgePoints: Edges {
         let nePoint = CGPoint(x: self.bounds.maxX, y: self.bounds.origin.y)
         let swPoint = CGPoint(x: self.bounds.minX, y: self.bounds.maxY)
         let neCoord = self.convert(nePoint, toCoordinateFrom: self)
