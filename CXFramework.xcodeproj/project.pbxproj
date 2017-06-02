@@ -15,6 +15,9 @@
 		144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31581E5E49A8009FE658 /* CX+NSObject.swift */; };
 		146C8DC01ECB712A00A8D56C /* CX+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C8DBF1ECB712A00A8D56C /* CX+String.swift */; };
 		146C8DC21ECB717600A8D56C /* CX+IUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C8DC11ECB717600A8D56C /* CX+IUTextField.swift */; };
+		14846D2A1EE1C7F2008FFCBE /* CX+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */; };
+		14846D331EE1CBFB008FFCBE /* CXDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846D321EE1CBFB008FFCBE /* CXDeviceType.swift */; };
+		14846D351EE1CC30008FFCBE /* CXScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846D341EE1CC30008FFCBE /* CXScreenSize.swift */; };
 		149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149711C51E490D0F00F60AFD /* CX+UIApplication.swift */; };
 		149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774C61E359AB100D4D1B1 /* GenericFormVC.swift */; };
 		149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774E01E359B0600D4D1B1 /* LoadingView.swift */; };
@@ -51,6 +54,9 @@
 		144E31581E5E49A8009FE658 /* CX+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+NSObject.swift"; sourceTree = "<group>"; };
 		146C8DBF1ECB712A00A8D56C /* CX+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+String.swift"; sourceTree = "<group>"; };
 		146C8DC11ECB717600A8D56C /* CX+IUTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+IUTextField.swift"; sourceTree = "<group>"; };
+		14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+MKMapView.swift"; sourceTree = "<group>"; };
+		14846D321EE1CBFB008FFCBE /* CXDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDeviceType.swift; sourceTree = "<group>"; };
+		14846D341EE1CC30008FFCBE /* CXScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXScreenSize.swift; sourceTree = "<group>"; };
 		149711C51E490D0F00F60AFD /* CX+UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIApplication.swift"; sourceTree = "<group>"; };
 		149774C61E359AB100D4D1B1 /* GenericFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFormVC.swift; sourceTree = "<group>"; };
 		149774E01E359B0600D4D1B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 		142AE6D41DA9B858006DEC65 /* CXFramework */ = {
 			isa = PBXGroup;
 			children = (
+				14846D301EE1CBFB008FFCBE /* Structs */,
 				149774DF1E359B0600D4D1B1 /* Utils */,
 				14E64B471DA9CDB4005194F8 /* Classes */,
 				14E64B541DA9CDB4005194F8 /* Enum */,
@@ -114,6 +121,23 @@
 				142AE6D61DA9B858006DEC65 /* Info.plist */,
 			);
 			path = CXFramework;
+			sourceTree = "<group>";
+		};
+		14846D301EE1CBFB008FFCBE /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				14846D311EE1CBFB008FFCBE /* Config */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		14846D311EE1CBFB008FFCBE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				14846D321EE1CBFB008FFCBE /* CXDeviceType.swift */,
+				14846D341EE1CC30008FFCBE /* CXScreenSize.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		149774DF1E359B0600D4D1B1 /* Utils */ = {
@@ -178,6 +202,7 @@
 				14D539A01EBFFD4C00DE6D38 /* CX+UITableView.swift */,
 				14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */,
 				146C8DBF1ECB712A00A8D56C /* CX+String.swift */,
+				14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -281,6 +306,7 @@
 				149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */,
 				14E64B621DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift in Sources */,
 				14E64B5C1DA9CDB4005194F8 /* CXMap.swift in Sources */,
+				14846D351EE1CC30008FFCBE /* CXScreenSize.swift in Sources */,
 				14E64B5D1DA9CDB4005194F8 /* CXPhone.swift in Sources */,
 				14E8548E1E54DD7E0048EF4F /* CX+Date.swift in Sources */,
 				14E8548A1E54D1060048EF4F /* CX+UIColor.swift in Sources */,
@@ -289,7 +315,9 @@
 				144E31521E5E45CC009FE658 /* CX+UITextView.swift in Sources */,
 				14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */,
 				14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */,
+				14846D331EE1CBFB008FFCBE /* CXDeviceType.swift in Sources */,
 				146C8DC01ECB712A00A8D56C /* CX+String.swift in Sources */,
+				14846D2A1EE1C7F2008FFCBE /* CX+MKMapView.swift in Sources */,
 				144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */,
 				146C8DC21ECB717600A8D56C /* CX+IUTextField.swift in Sources */,
 				144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */,
