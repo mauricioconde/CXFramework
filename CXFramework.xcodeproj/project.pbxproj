@@ -15,6 +15,7 @@
 		144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E31581E5E49A8009FE658 /* CX+NSObject.swift */; };
 		146C8DC01ECB712A00A8D56C /* CX+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C8DBF1ECB712A00A8D56C /* CX+String.swift */; };
 		146C8DC21ECB717600A8D56C /* CX+IUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C8DC11ECB717600A8D56C /* CX+IUTextField.swift */; };
+		14846D2A1EE1C7F2008FFCBE /* CX+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */; };
 		149711C61E490D0F00F60AFD /* CX+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149711C51E490D0F00F60AFD /* CX+UIApplication.swift */; };
 		149774C71E359AB100D4D1B1 /* GenericFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774C61E359AB100D4D1B1 /* GenericFormVC.swift */; };
 		149774E11E359B0600D4D1B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149774E01E359B0600D4D1B1 /* LoadingView.swift */; };
@@ -51,6 +52,7 @@
 		144E31581E5E49A8009FE658 /* CX+NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+NSObject.swift"; sourceTree = "<group>"; };
 		146C8DBF1ECB712A00A8D56C /* CX+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+String.swift"; sourceTree = "<group>"; };
 		146C8DC11ECB717600A8D56C /* CX+IUTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+IUTextField.swift"; sourceTree = "<group>"; };
+		14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+MKMapView.swift"; sourceTree = "<group>"; };
 		149711C51E490D0F00F60AFD /* CX+UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UIApplication.swift"; sourceTree = "<group>"; };
 		149774C61E359AB100D4D1B1 /* GenericFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFormVC.swift; sourceTree = "<group>"; };
 		149774E01E359B0600D4D1B1 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				14D539A01EBFFD4C00DE6D38 /* CX+UITableView.swift */,
 				14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */,
 				146C8DBF1ECB712A00A8D56C /* CX+String.swift */,
+				14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				14E64B6A1DA9CE94005194F8 /* CXVideo.swift in Sources */,
 				14E64B5F1DA9CDB4005194F8 /* CXDownloadInformer.swift in Sources */,
 				146C8DC01ECB712A00A8D56C /* CX+String.swift in Sources */,
+				14846D2A1EE1C7F2008FFCBE /* CX+MKMapView.swift in Sources */,
 				144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */,
 				146C8DC21ECB717600A8D56C /* CX+IUTextField.swift in Sources */,
 				144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */,
