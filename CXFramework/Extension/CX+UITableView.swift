@@ -13,7 +13,7 @@ public extension UITableView {
     /// Refresh the tableview sections
     public func cx_refreshDataAnimated(forSections: NSIndexSet? = nil) {
         let sections = forSections != nil ? forSections : NSIndexSet(index: 0)
-        self.reloadSections(sections as! IndexSet, with: .automatic)
+        self.reloadSections(sections! as IndexSet, with: .automatic)
     }
     
     /// Configures a refresh control for this tableview

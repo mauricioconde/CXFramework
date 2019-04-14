@@ -24,10 +24,10 @@ public extension UIColor{
         var formattedStr: String = str.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
         if (formattedStr.hasPrefix("#")) {
-            formattedStr = formattedStr.substring(from: formattedStr.index(formattedStr.startIndex, offsetBy: 1))
+            formattedStr = formattedStr.replacingOccurrences(of: "#", with: "")
         }
         
-        if ((formattedStr.characters.count) != 6) {
+        if ((formattedStr.count) != 6) {
             return UIColor.gray
         }
         var rgbValue:UInt32 = 0

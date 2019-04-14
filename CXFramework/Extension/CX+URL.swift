@@ -15,10 +15,12 @@ public extension URL {
     /// - parameters:
     ///     - url: The URL link
     public static func cx_openLink(_ str:String) {
-        guard let strURL = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
-            let url = URL(string: strURL) else {
+        guard
+            let strURL = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
+            let url = URL(string: strURL)
+            else {
                 return
         }
-        UIApplication.shared.openURL(url)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }    
 }

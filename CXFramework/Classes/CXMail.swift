@@ -16,10 +16,10 @@ public class CXMail {
     ///
     /// - parameters:
     ///     - url: The email URL
-    public class func sendMail(_ url:String){
-        let stringURL: NSString = "mailto:\(url)" as NSString;
-        let url: URL = URL(string: stringURL as String)!
-        UIApplication.shared.openURL(url)
+    public class func sendMail(_ url: String){
+        let stringURL = "mailto:\(url)"
+        guard let url = URL(string: stringURL) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     ///---
@@ -34,6 +34,5 @@ public class CXMail {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
         return emailTest.evaluate(with: email)
-        
     }
 }

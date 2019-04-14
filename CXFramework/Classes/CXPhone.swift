@@ -18,7 +18,7 @@ public class CXPhone {
     ///     - phone: The phone number
     public class func callNumber(_ phone:String){
         let phoneUrl = "tel://" + phone.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-        UIApplication.shared.openURL(URL(string: phoneUrl)!)
-        
+        guard let url = URL(string: phoneUrl) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

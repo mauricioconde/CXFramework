@@ -136,7 +136,7 @@ public extension Date {
                                        andTimeZoneID timeZoneID: String? = nil) -> String? {
         let formatter = DateFormatter()
         if let tzID = timeZoneID {
-            formatter.timeZone = NSTimeZone(name: tzID) as TimeZone!
+            formatter.timeZone = TimeZone(identifier: tzID)
         }
         formatter.dateFormat = format
         if let date = formatter.date(from: date) {
@@ -154,7 +154,7 @@ public extension Date {
         
         let formatter = DateFormatter()
         if let tzID = timeZoneID {
-            formatter.timeZone = NSTimeZone(name: tzID) as TimeZone! // "UTC"
+            formatter.timeZone = TimeZone(identifier: tzID) // "UTC"
         }
         formatter.dateFormat = format   // "dd/mm/yyyy"
         return formatter.string(from: date)
