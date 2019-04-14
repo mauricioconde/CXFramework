@@ -24,15 +24,26 @@ public extension UICollectionView {
                                             font: UIFont,
                                             target: AnyObject,
                                             and action: Selector) -> UIRefreshControl {
-        let attributes = [NSForegroundColorAttributeName: color,
-                          NSFontAttributeName: font]
+        let attributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color,
+                          convertFromNSAttributedStringKey(NSAttributedString.Key.font): font]
         let refreshCntrl = UIRefreshControl()
         refreshCntrl.addTarget(target,
                                action: action,
-                               for: UIControlEvents.valueChanged)
-        refreshCntrl.attributedTitle = NSAttributedString(string: title, attributes: attributes)
+                               for: UIControl.Event.valueChanged)
+        refreshCntrl.attributedTitle = NSAttributedString(string: title, attributes: convertToOptionalNSAttributedStringKeyDictionary(attributes))
         refreshCntrl.tintColor = color
         self.addSubview(refreshCntrl)
         return refreshCntrl
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

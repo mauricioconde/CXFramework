@@ -51,7 +51,7 @@ public extension UIApplication{
             .transition(
                 with: window,
                 duration: 0.5,
-                options: UIViewAnimationOptions.transitionCrossDissolve,
+                options: UIView.AnimationOptions.transitionCrossDissolve,
                 animations: {window.rootViewController = vc},
                 completion: nil)
     }

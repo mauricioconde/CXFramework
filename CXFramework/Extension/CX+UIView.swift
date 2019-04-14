@@ -16,9 +16,9 @@ public extension UIView{
                                                toView:UIView,
                                                curpUp: Bool,
                                                completion: (()->Void)?){
-        var animation = UIViewAnimationOptions.transitionCurlUp
+        var animation = UIView.AnimationOptions.transitionCurlUp
         if !curpUp{
-            animation = UIViewAnimationOptions.transitionCurlDown
+            animation = UIView.AnimationOptions.transitionCurlDown
         }
         // Transition using a page curl.
         UIView.transition(from: fromView,
@@ -36,7 +36,7 @@ public extension UIView{
         UIView.transition(from: fromView,
                           to: toView,
                           duration: 0.5,
-                          options: UIViewAnimationOptions.transitionCrossDissolve,
+                          options: UIView.AnimationOptions.transitionCrossDissolve,
                           completion: {(finished: Bool) in
                             if completion != nil{
                                 DispatchQueue.main.async {

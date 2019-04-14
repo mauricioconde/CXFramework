@@ -26,10 +26,10 @@ public extension UITextField {
         }
         
         let doneButton = UIBarButtonItem(title: title,
-                                         style: UIBarButtonItemStyle.done,
+                                         style: UIBarButtonItem.Style.done,
                                          target: self,
                                          action: action)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
                                           target: nil,
                                           action: nil)
         toolBar.setItems([doneButton,spaceButton], animated: false)

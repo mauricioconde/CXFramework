@@ -23,13 +23,13 @@ public extension UIViewController {
                                                       action: Selector){
         var icon: UIImageView!
         
-        let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        let image  = UIImage(named: imgName)?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         icon = UIImageView(image: image?.cx_resize(width: 30, height: 30))
         icon.alpha = 0.5
         
         guard self.navigationItem.leftBarButtonItems != nil else{
             let lBarBtnItem = UIBarButtonItem(image: icon.image,
-                                              style: UIBarButtonItemStyle.plain,
+                                              style: UIBarButtonItem.Style.plain,
                                               target: self,
                                               action: action)
             self.navigationItem.leftBarButtonItem = lBarBtnItem
@@ -55,13 +55,13 @@ public extension UIViewController {
                                                        action: Selector){
         var icon: UIImageView!
         
-        let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        let image  = UIImage(named: imgName)?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         icon = UIImageView(image: image?.cx_resize(width: 30, height: 30))
         icon.alpha = 0.5
         
         guard self.navigationItem.rightBarButtonItems != nil else{
             let rBarBtnItem = UIBarButtonItem(image: icon.image,
-                                              style: UIBarButtonItemStyle.plain,
+                                              style: UIBarButtonItem.Style.plain,
                                               target: self,
                                               action: action)
             self.navigationItem.rightBarButtonItem = rBarBtnItem
@@ -84,11 +84,11 @@ public extension UIViewController {
         var icon: UIImageView!
         var buttons: [UIBarButtonItem] = []
         for(index,imgName) in imgNames.enumerated() {
-            let image  = UIImage(named: imgName)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            let image  = UIImage(named: imgName)?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             icon = UIImageView(image: image?.cx_resize(width: 30, height: 30))
             icon.alpha = 0.5
             buttons.append(UIBarButtonItem(image: icon.image,
-                                           style: UIBarButtonItemStyle.plain,
+                                           style: UIBarButtonItem.Style.plain,
                                            target: self,
                                            action: actions[index]))
         }
@@ -109,7 +109,7 @@ public extension UIViewController {
     public func cx_showAlertWithActions(title: String?,
                                         message: String?,
                                         actions: [UIAlertAction],
-                                        style: UIAlertControllerStyle = .actionSheet){
+                                        style: UIAlertController.Style = .actionSheet){
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: style)
@@ -131,10 +131,10 @@ public extension UIViewController {
     public func cx_showAlert(withTitle title: String?, message: String, okAction: (()->Void)?){
         let alert = UIAlertController(title: (title != nil) ? title : nil,
                                       message: message,
-                                      preferredStyle: UIAlertControllerStyle.alert)
+                                      preferredStyle: UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: "Aceptar",
-                                   style: UIAlertActionStyle.cancel,
+                                   style: UIAlertAction.Style.cancel,
                                    handler: {(action) in
                                     if okAction != nil {okAction!()}
         })
@@ -155,15 +155,15 @@ public extension UIViewController {
                                      okAction: (()->Void)?){
         let alert = UIAlertController(title: (title != nil) ? title : nil,
                                       message: message,
-                                      preferredStyle: UIAlertControllerStyle.alert)
+                                      preferredStyle: UIAlertController.Style.alert)
         
         let action = UIAlertAction(title: "Aceptar",
-                                   style: UIAlertActionStyle.cancel,
+                                   style: UIAlertAction.Style.cancel,
                                    handler: {(action) in
                                     if okAction != nil {okAction!()}
         })
         let cancelAction = UIAlertAction(title: "Cancelar",
-                                         style: UIAlertActionStyle.default,
+                                         style: UIAlertAction.Style.default,
                                          handler: nil)
         alert.addAction(action)
         alert.addAction(cancelAction)

@@ -38,8 +38,8 @@ open class GenericFormVC: UIViewController {
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let center = NotificationCenter.default
-        center.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+        center.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     open func configureView(){
@@ -51,23 +51,23 @@ open class GenericFormVC: UIViewController {
         let center = NotificationCenter.default
         center.addObserver(self,
                            selector: #selector(self.keyboardWasShown),
-                           name: NSNotification.Name.UIKeyboardDidShow,
+                           name: UIResponder.keyboardDidShowNotification,
                            object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWasShown),
-                                               name:  NSNotification.Name.UIKeyboardDidChangeFrame,
+                                               name:  UIResponder.keyboardDidChangeFrameNotification,
                                                object: nil)
         center.addObserver(self,
                            selector: #selector(self.keyboardWillBeHidden),
-                           name: NSNotification.Name.UIKeyboardWillHide,
+                           name: UIResponder.keyboardWillHideNotification,
                            object: nil)
     }
     
     /// Called when the UIKeyboardDidShowNotification is sent.
-    func keyboardWasShown(notification: NSNotification){
+    @objc func keyboardWasShown(notification: NSNotification){
         guard activeField != nil else{return}
         let info = notification.userInfo
-        let kbSize = (info?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let kbSize = (info?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         let kbToolbarHeight: CGFloat = 40 //we allways add a toolbar to the keyboard
         
         guard kbSize != nil else {return}
@@ -92,7 +92,7 @@ open class GenericFormVC: UIViewController {
     }
     
     /// Called when the UIKeyboardWillHideNotification is sent
-    func keyboardWillBeHidden(notification: NSNotification){
+    @objc func keyboardWillBeHidden(notification: NSNotification){
         let contentInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
@@ -154,7 +154,7 @@ public extension UIViewController {
     /// Causes the view (or one of its embedded text fields) to resign the 1st responder status
     /// - note: if you want to dismiss the keyboard when touching outside UITextField use
     /// 'hideKeyboardOnViewTouch' method instead
-    public func hideKeyboard(){
+    @objc public func hideKeyboard(){
         DispatchQueue.main.async {
             self.view.endEditing(true)
         }

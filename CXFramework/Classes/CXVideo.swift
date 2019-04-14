@@ -44,7 +44,7 @@ public class CXVideo {
                 .default
                 .addObserver(self,
                              selector: #selector(CXPlayerLayer.orientationChanged),
-                             name: NSNotification.Name.UIDeviceOrientationDidChange,
+                             name: UIDevice.orientationDidChangeNotification,
                              object: UIDevice.current)
         }
         
@@ -66,7 +66,7 @@ public class CXVideo {
             self.layoutIfNeeded()
         }
         
-        public func orientationChanged(){
+        @objc public func orientationChanged(){
             let orientation = UIDevice.current.orientation
             
             //Restore the layer's original size
