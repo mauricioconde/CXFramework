@@ -18,7 +18,7 @@ public extension UIViewController {
     ///     - imgName: The image name
     ///     - target: The object that receives the action message.
     ///     - action: The action to send to target when this item is selected.
-    public func cx_configureImageForLeftBarButtonItem(imgName: String,
+    func cx_configureImageForLeftBarButtonItem(imgName: String,
                                                       target: AnyObject?,
                                                       action: Selector){
         var icon: UIImageView!
@@ -50,7 +50,7 @@ public extension UIViewController {
     ///     - imgName: The image name
     ///     - target: The object that receives the action message.
     ///     - action: The action to send to target when this item is selected.
-    public func cx_configureImageForRightBarButtonItem(imgName: String,
+    func cx_configureImageForRightBarButtonItem(imgName: String,
                                                        target: AnyObject?,
                                                        action: Selector){
         var icon: UIImageView!
@@ -74,7 +74,7 @@ public extension UIViewController {
         rBarBtnItem.action = action
     }
     
-    public func cx_configureImagesForLeftBarButtons(imgNames: [String],
+    func cx_configureImagesForLeftBarButtons(imgNames: [String],
                                                     target: AnyObject?,
                                                     actions: [Selector]) {
         guard imgNames.count == actions.count else {
@@ -106,7 +106,7 @@ public extension UIViewController {
     ///     - message: The alert's message
     ///     - actions: An array of UIAlertAction to attach to the Alert
     ///     - style: Optional value to specify the alert style. Default .ActionSheet
-    public func cx_showAlertWithActions(title: String?,
+    func cx_showAlertWithActions(title: String?,
                                         message: String?,
                                         actions: [UIAlertAction],
                                         style: UIAlertController.Style = .actionSheet){
@@ -128,7 +128,7 @@ public extension UIViewController {
     ///     - title: The harcoded corresponding to the Title to be displayed
     ///     - message: The harcoded corresponding to the Message to be displayed
     ///     - okAction: The callback to be executed when the 'OK' button is pressed
-    public func cx_showAlert(withTitle title: String?, message: String, okAction: (()->Void)?){
+    func cx_showAlert(withTitle title: String?, message: String, okAction: (()->Void)?){
         let alert = UIAlertController(title: (title != nil) ? title : nil,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
@@ -150,9 +150,10 @@ public extension UIViewController {
     ///     - title: The harcoded corresponding to the Title to be displayed
     ///     - message: The harcoded corresponding to the Message to be displayed
     ///     - okAction: The callback to be executed when the 'OK' button is pressed
-    public func cx_showOkCancelAlert(withTitle title: String?,
+    func cx_showOkCancelAlert(withTitle title: String?,
                                      message: String,
-                                     okAction: (()->Void)?){
+                                     okAction: (()->Void)?,
+                                     cancelAction: (()->Void)?){
         let alert = UIAlertController(title: (title != nil) ? title : nil,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
@@ -164,7 +165,7 @@ public extension UIViewController {
         })
         let cancelAction = UIAlertAction(title: "Cancelar",
                                          style: UIAlertAction.Style.default,
-                                         handler: nil)
+                                         handler: {_ in cancelAction?() })
         alert.addAction(action)
         alert.addAction(cancelAction)
         
@@ -175,7 +176,7 @@ public extension UIViewController {
 // MARK:- Navigation related methods
 extension UIViewController {
     
-    public func cx_closeVC() {
+    @objc public func cx_closeVC() {
         guard self.navigationController != nil else {
             self.dismiss(animated: true, completion: nil)
             return
