@@ -112,11 +112,7 @@
 		142AE6D41DA9B858006DEC65 /* CXFramework */ = {
 			isa = PBXGroup;
 			children = (
-				14846D301EE1CBFB008FFCBE /* Structs */,
-				149774DF1E359B0600D4D1B1 /* Utils */,
-				14E64B471DA9CDB4005194F8 /* Classes */,
-				14E64B541DA9CDB4005194F8 /* Enum */,
-				14E64B561DA9CDB4005194F8 /* Extension */,
+				2242DE44244113CB0036C852 /* Classes */,
 				142AE6D51DA9B858006DEC65 /* CXFramework.h */,
 				142AE6D61DA9B858006DEC65 /* Info.plist */,
 			);
@@ -149,7 +145,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		14E64B471DA9CDB4005194F8 /* Classes */ = {
+		14E64B471DA9CDB4005194F8 /* CXClasses */ = {
 			isa = PBXGroup;
 			children = (
 				149774C61E359AB100D4D1B1 /* GenericFormVC.swift */,
@@ -160,7 +156,7 @@
 				14E64B4B1DA9CDB4005194F8 /* CXPhone.swift */,
 				14E64B4D1DA9CDB4005194F8 /* Download */,
 			);
-			path = Classes;
+			path = CXClasses;
 			sourceTree = "<group>";
 		};
 		14E64B4D1DA9CDB4005194F8 /* Download */ = {
@@ -205,6 +201,18 @@
 				14846D291EE1C7F2008FFCBE /* CX+MKMapView.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		2242DE44244113CB0036C852 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14846D301EE1CBFB008FFCBE /* Structs */,
+				149774DF1E359B0600D4D1B1 /* Utils */,
+				14E64B471DA9CDB4005194F8 /* CXClasses */,
+				14E64B541DA9CDB4005194F8 /* Enum */,
+				14E64B561DA9CDB4005194F8 /* Extension */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
