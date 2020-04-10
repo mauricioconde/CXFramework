@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		2242DE452441165B0036C852 /* CXFrameworkLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2242DE462441165B0036C852 /* Build configuration list for PBXAggregateTarget "CXFrameworkLib" */;
+			buildPhases = (
+				2242DE49244116650036C852 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CXFrameworkLib;
+			productName = CXFrameworkLib;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		142AE6D71DA9B858006DEC65 /* CXFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 142AE6D51DA9B858006DEC65 /* CXFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E314F1E5E4573009FE658 /* CX+UILabel.swift */; };
@@ -262,6 +276,11 @@
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
+					2242DE452441165B0036C852 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = WTWX7KL654;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 142AE6CC1DA9B858006DEC65 /* Build configuration list for PBXProject "CXFramework" */;
@@ -278,6 +297,7 @@
 			projectRoot = "";
 			targets = (
 				142AE6D11DA9B858006DEC65 /* CXFramework */,
+				2242DE452441165B0036C852 /* CXFrameworkLib */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +311,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2242DE49244116650036C852 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "UNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nFRAMEWORK_NAME=\"CXFrameworkLib\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target ${PROJECT_NAME} -scheme ${FRAMEWORK_NAME}  ONLY_ACTIVE_ARCH=NO -UseModernBuildSystem=NO -configuration Release -arch arm64 -arch armv7 -arch armv7s -sdk \"iphoneos\"  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target ${PROJECT_NAME} -scheme ${FRAMEWORK_NAME}  ONLY_ACTIVE_ARCH=NO -UseModernBuildSystem=NO -configuration Release -arch x86_64 -arch i386 -sdk \"iphonesimulator\"  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/Release-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/Release-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/Release-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/Release-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		142AE6CD1DA9B858006DEC65 /* Sources */ = {
@@ -470,6 +510,7 @@
 				INFOPLIST_FILE = CXFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.macxtter.CXFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -492,11 +533,30 @@
 				INFOPLIST_FILE = CXFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.macxtter.CXFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2242DE472441165B0036C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WTWX7KL654;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2242DE482441165B0036C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WTWX7KL654;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -517,6 +577,15 @@
 			buildConfigurations = (
 				142AE6DB1DA9B858006DEC65 /* Debug */,
 				142AE6DC1DA9B858006DEC65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2242DE462441165B0036C852 /* Build configuration list for PBXAggregateTarget "CXFrameworkLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2242DE472441165B0036C852 /* Debug */,
+				2242DE482441165B0036C852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
