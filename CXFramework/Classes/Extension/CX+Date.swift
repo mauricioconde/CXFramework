@@ -85,13 +85,24 @@ public extension Date {
     // MARK:- Instance methods
     /// Modifies the **hours, minutes and seconds** of this Date
     /// - return: A new Date with the hours, minutes & seconds specified
-    func cx_dateWith(hours: Int, minutes: Int, seconds: Int) -> Date{
+    func cx_dateWith(hours: Int, minutes: Int, seconds: Int) -> Date {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self as Date)
         components.hour = hours
         components.minute = minutes
         components.second = seconds
         return calendar.date(from: components)!
+    }
+    
+    /// Modifies the **hours, minutes and seconds** of this Date
+    /// - return: A new Date with the hours, minutes & seconds specified
+    mutating func cxModify(hours: Int, minutes: Int, seconds: Int) {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self as Date)
+        components.hour = hours
+        components.minute = minutes
+        components.second = seconds
+        self = calendar.date(from: components)!
     }
     
     /// Returns true if this date is greater thant the other one
@@ -218,6 +229,22 @@ public extension Date {
         // UTC is the default time zone
         dateFormatter.timeZone = TimeZone(abbreviation: Timezone.utc.rawValue)
         return dateFormatter.date(from: dateStr)!
+    }
+    
+    /// Returns a new **date instance** in **UTC timeZone** from specific year, month & day
+    static func cxNewDate(fromYear year: Int, month: Int, day: Int) -> Date? {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: Timezone.utc.rawValue)!
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        return calendar.date(from: dateComponents)
     }
     
     /// Returns a **Date** corresponding to the specified millisecods
