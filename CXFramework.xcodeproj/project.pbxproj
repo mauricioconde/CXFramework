@@ -57,6 +57,7 @@
 		14F835C21EC8E2AC006D4AB8 /* CX+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */; };
 		2245A2FB244B90E3006D9A64 /* CXPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245A2FA244B90E3006D9A64 /* CXPicker.swift */; };
 		2245A2FD244B9172006D9A64 /* BGTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245A2FC244B9172006D9A64 /* BGTask.swift */; };
+		2251FBCD244CEFD000938A06 /* CXFileDownloaderVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2251FBCC244CEFD000938A06 /* CXFileDownloaderVController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		14F835C11EC8E2AC006D4AB8 /* CX+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CX+UICollectionView.swift"; sourceTree = "<group>"; };
 		2245A2FA244B90E3006D9A64 /* CXPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXPicker.swift; sourceTree = "<group>"; };
 		2245A2FC244B9172006D9A64 /* BGTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGTask.swift; sourceTree = "<group>"; };
+		2251FBCC244CEFD000938A06 /* CXFileDownloaderVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXFileDownloaderVController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				14E64B4F1DA9CDB4005194F8 /* CXFileDownloader.swift */,
 				14E64B501DA9CDB4005194F8 /* CXFileDownloaderDataSource.swift */,
 				14E64B511DA9CDB4005194F8 /* CXFileDownloaderDelegate.swift */,
+				2251FBCC244CEFD000938A06 /* CXFileDownloaderVController.swift */,
 				14E64B521DA9CDB4005194F8 /* CXFileDownloadInfo.swift */,
 			);
 			path = Download;
@@ -383,6 +386,7 @@
 				146C8DC01ECB712A00A8D56C /* CX+String.swift in Sources */,
 				14846D2A1EE1C7F2008FFCBE /* CX+MKMapView.swift in Sources */,
 				144E31591E5E49A8009FE658 /* CX+NSObject.swift in Sources */,
+				2251FBCD244CEFD000938A06 /* CXFileDownloaderVController.swift in Sources */,
 				146C8DC21ECB717600A8D56C /* CX+IUTextField.swift in Sources */,
 				2245A2FD244B9172006D9A64 /* BGTask.swift in Sources */,
 				144E31501E5E4573009FE658 /* CX+UILabel.swift in Sources */,

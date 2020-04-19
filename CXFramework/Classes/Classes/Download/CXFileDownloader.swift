@@ -46,52 +46,63 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
     /// Starts the download process for a single file
     open func startOrPauseDownloadingFileAtIndex(_ index: Int){
         guard (index >= 0 && index < fileDownloadDataArr.count) else {
-            delegate?.cxFileDownloader(nil,
-                                       didStartOrPauseDownloadingFile: false,
-                                       index: index,
-                                       status: CXDownloadInformer.indexOutOfBounds)
+            //TODO check if this must to be called in the UI queue
+            DispatchQueue.main.async {
+                self.delegate?.cxFileDownloader(nil,
+                                                didStartOrPauseDownloadingFile: .started,
+                                                index: self.INVALID_ARRAY_INDEX,
+                                                error: .indexOutOfBounds)
+            }
             return
         }
+        
         let fdi = fileDownloadDataArr[index]
         if !fdi.isDownloading {
             if fdi.taskId == -1 {
-                //Create a new task providing the appropriate URL as the download source
-                //Keep the new task identifier &
-                //Start the task
+                // Create a new task providing the appropriate URL as the download source
+                // Keep the new task identifier &
+                // Start the task
                 fdi.downloadTask = session.downloadTask(with: URL(string: fdi.downloadSource)!)
                 fdi.taskId = fdi.downloadTask.taskIdentifier
                 fdi.downloadTask.resume()
                 
-                //TODO check if this must to be called in the UI queue
-                delegate?.cxFileDownloader(fdi,
-                                            didStartOrPauseDownloadingFile: true,
-                                            index: index,
-                                            status: CXDownloadInformer.success)
+                // TODO: - check if this must to be called in the UI queue
+                DispatchQueue.main.async {
+                    self.delegate?.cxFileDownloader(fdi,
+                                                    didStartOrPauseDownloadingFile: .started,
+                                                    index: index,
+                                                    error: nil)
+                }
                 
-            }else{
-                //Resume download task
-                //& keep the new download task identifier
+            } else {
+                // Resume download task
+                // & keep the new download task identifier
                 fdi.downloadTask = session.downloadTask(withResumeData: fdi.taskResumeData)
                 fdi.downloadTask.resume()
                 fdi.taskId = fdi.downloadTask.taskIdentifier
                 
-                //TODO check if this must to be called in the UI queue
-                delegate?.cxFileDownloader(fdi,
-                                            didStartOrPauseDownloadingFile: true,
-                                            index: index,
-                                            status: CXDownloadInformer.success)
+                // TODO: - check if this must to be called in the UI queue
+                DispatchQueue.main.async {
+                    self.delegate?.cxFileDownloader(fdi,
+                                                    didStartOrPauseDownloadingFile: .restarted,
+                                                    index: index,
+                                                    error: nil)
+                }
             }
-        }else{
-            //Pause the task by canceling it and storing the resume data.
+            
+        } else {
+            // Pause the task by cancelling it and storing the resume data.
             fdi.downloadTask.cancel(byProducingResumeData: { (resumeData) in
                 if(resumeData != nil){
                     fdi.taskResumeData = resumeData
                     
-                    //TODO check if this must to be called in the UI queue
-                    self.delegate?.cxFileDownloader(fdi,
-                        didStartOrPauseDownloadingFile: false,
-                        index: index,
-                        status: CXDownloadInformer.success)
+                    // TODO: - check if this must to be called in the UI queue
+                    DispatchQueue.main.async {
+                        self.delegate?.cxFileDownloader(fdi,
+                                                        didStartOrPauseDownloadingFile: .paused,
+                                                        index: index,
+                                                        error: nil)
+                    }
                 }
             })
         }
@@ -101,12 +112,16 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
     /// Stops the download process for a single file
     open func stopDownloadingFileAtIndex(_ index: Int){
         guard (index >= 0 && index < fileDownloadDataArr.count) else {
-            delegate?.cxFileDownloader(nil,
-                                       didStopDownloadingFile: false,
-                                       index: index,
-                                       status: CXDownloadInformer.indexOutOfBounds)
+            // TODO: - check if this must to be called in the UI queue
+            DispatchQueue.main.async {
+                self.delegate?.cxFileDownloader(nil,
+                                                didStopDownloadingFile: false,
+                                                index: self.INVALID_ARRAY_INDEX,
+                                                error: .indexOutOfBounds)
+            }
             return
         }
+        
         let fdi = fileDownloadDataArr[index]
         fdi.downloadTask.cancel()
         fdi.isDownloading = false
@@ -114,12 +129,13 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
         fdi.downloadProgress = 0
         fdi.downloadTask = nil
         
-        //TODO check if this must to be called in the UI queue
-        delegate?.cxFileDownloader(fdi,
-                                    didStopDownloadingFile: true,
-                                    index: index,
-                                    status: CXDownloadInformer.success)
-        
+        // TODO: - check if this must to be called in the UI queue
+        DispatchQueue.main.async {
+            self.delegate?.cxFileDownloader(fdi,
+                                            didStopDownloadingFile: true,
+                                            index: index,
+                                            error: nil)
+        }
     }
     
     /// Starts the download process for all files
@@ -140,8 +156,10 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
                 fdi.isDownloading = true
             }
         }
-        //TODO check if this must to be called in the UI queue
-        delegate?.cxFileDownloader(fileDownloadDataArr, didStartAllDownloads: true)
+        // TODO: - check if this must to be called in the UI queue
+        DispatchQueue.main.async {
+            self.delegate?.cxFileDownloader(self.fileDownloadDataArr, didStartAllDownloads: true)
+        }
     }
     
     /// Stops the download process for all files
@@ -156,11 +174,13 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
             }
         }
         //TODO check if this must to be called in the UI queue
-        delegate?.cxFileDownloader(fileDownloadDataArr, didStopAllDownloads: true)
+        DispatchQueue.main.async {
+            self.delegate?.cxFileDownloader(self.fileDownloadDataArr, didStopAllDownloads: true)
+        }
     }
     
     fileprivate func getFileDownloadInfoIndexWithTaskID(_ taskIdenfifier: Int) -> Int{
-        for (index,fdi) in fileDownloadDataArr.enumerated(){
+        for (index,fdi) in fileDownloadDataArr.enumerated() {
             if(fdi.taskId == taskIdenfifier) {return index}
         }
         return INVALID_ARRAY_INDEX
@@ -178,25 +198,25 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
                                               totalBytesExpectedToWrite: Int64) {
         
         guard totalBytesExpectedToWrite != NSURLSessionTransferSizeUnknown else {
-            //Unknow transfer size
-            DispatchQueue.main.async(execute: { 
+            // Unknow transfer size
+            DispatchQueue.main.async(execute: {
                 self.delegate?.cxFileDownloader(nil,
-                    index: self.INVALID_ARRAY_INDEX,
-                    didUpdateDownloadProgress: 0.0,
-                    status: CXDownloadInformer.unknownTransferSize)
+                                                index: self.INVALID_ARRAY_INDEX,
+                                                didUpdateDownloadProgress: 0.0,
+                                                error: .unknownTransferSize)
             })
             return
         }
         
-        //Locate the FileDownloadInfo object among all based on the taskIdentifier property of the task.
+        // Locate the FileDownloadInfo object among all based on the taskIdentifier property of the task.
         let index = getFileDownloadInfoIndexWithTaskID(downloadTask.taskIdentifier)
         guard index != INVALID_ARRAY_INDEX else {
-            //Cant retrieve CXDownloadFileInfo object
+            // Can't retrieve CXDownloadFileInfo object
             DispatchQueue.main.async(execute: {
                 self.delegate?.cxFileDownloader(nil,
-                    index: self.INVALID_ARRAY_INDEX,
-                    didUpdateDownloadProgress: 0.0,
-                    status: CXDownloadInformer.unknowCXDownloadFileInfo)
+                                                index: self.INVALID_ARRAY_INDEX,
+                                                didUpdateDownloadProgress: 0.0,
+                                                error: .unknowCXDownloadFileInfo)
             })
             return
         }
@@ -205,9 +225,9 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
         DispatchQueue.main.async {
             fdi.downloadProgress = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
             self.delegate?.cxFileDownloader(fdi,
-                                             index: index,
-                                             didUpdateDownloadProgress: fdi.downloadProgress,
-                                             status: CXDownloadInformer.success)
+                                            index: index,
+                                            didUpdateDownloadProgress: fdi.downloadProgress,
+                                            error: nil)
         }
     }
     
@@ -217,13 +237,28 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
                                  didFinishDownloadingTo location: URL) {
         
         let fileManager = FileManager()
-        guard let destinationFileName = downloadTask.originalRequest?.url?.lastPathComponent else{
-            //Cant save the file because
-            //cant retrieve the destination file name
+        let index = getFileDownloadInfoIndexWithTaskID(downloadTask.taskIdentifier)
+        
+        guard index != INVALID_ARRAY_INDEX else {
+            DispatchQueue.main.async {
+                self.delegate?.cxFileDownloader(didFinishDownloading: true,
+                                                didSaveFileAtDocumentsDir: false,
+                                                name: nil,
+                                                index: index,
+                                                status: .cantFindRelatedFile)
+            }
+            return
+        }
+        
+        guard let destinationFileName = downloadTask.originalRequest?.url?.lastPathComponent else {
+            // Can't save the file because
+            // can't retrieve the destination file name
             DispatchQueue.main.async(execute: {
-                self.delegate?.cxFileDownloader(didSaveFileAtDocumentsDir: false,
-                    name: nil,
-                    status: CXDownloadInformer.unknowDestinationFileName)
+                self.delegate?.cxFileDownloader(didFinishDownloading: true,
+                                                didSaveFileAtDocumentsDir: false,
+                                                name: nil,
+                                                index: index,
+                                                status: .unknowDestinationFileName)
             })
             return
         }
@@ -232,41 +267,45 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
         if fileManager.fileExists(atPath: destinationURL!.path){
             do{ try fileManager.removeItem(at: destinationURL!) }
             catch{
-                //Cant save the file. because
-                //there is another file with the same name
+                // Can't save the file. because
+                // there is another file with the same name
                 DispatchQueue.main.async(execute: {
-                    self.delegate?.cxFileDownloader(didSaveFileAtDocumentsDir: false,
-                        name: nil,
-                        status: CXDownloadInformer.fileNameExists)
+                    self.delegate?.cxFileDownloader(didFinishDownloading: true,
+                                                    didSaveFileAtDocumentsDir: false,
+                                                    name: nil,
+                                                    index: index,
+                                                    status: .fileNameExists)
                 })
                 return
             }
         }
         
-        let index = getFileDownloadInfoIndexWithTaskID(downloadTask.taskIdentifier)
-        if (try? fileManager.copyItem(at: location, to: destinationURL!)) != nil && index > 0{
+        
+        if (try? fileManager.copyItem(at: location, to: destinationURL!)) != nil && index > 0 {
             let fdi = fileDownloadDataArr[index]
             
             fdi.isDownloading = false
             fdi.downloadComplete = true
             fdi.taskId = -1
             fdi.taskResumeData = nil
-            DispatchQueue.main.async(execute: {
-                DispatchQueue.main.async(execute: {
-                    self.delegate?.cxFileDownloader(didSaveFileAtDocumentsDir: true,
-                        name: destinationFileName,
-                        status: CXDownloadInformer.success)
-                })
-            })
+            DispatchQueue.main.async {
+                self.delegate?.cxFileDownloader(didFinishDownloading: true,
+                                                didSaveFileAtDocumentsDir: true,
+                                                name: destinationFileName,
+                                                index: index,
+                                                status: .success)
+            }
             
-        }else{
+        } else {
             // Unable to relocate file from temp directory 
             // to the app documents dir
-            DispatchQueue.main.async(execute: {
-                self.delegate?.cxFileDownloader(didSaveFileAtDocumentsDir: false,
-                    name: nil,
-                    status: CXDownloadInformer.cantCopyFromTempDir)
-            })
+            DispatchQueue.main.async {
+                self.delegate?.cxFileDownloader(didFinishDownloading: true,
+                                                didSaveFileAtDocumentsDir: false,
+                                                name: nil,
+                                                index: index,
+                                                status: .cantCopyFromTempDir)
+            }
         }
     }
     
@@ -314,6 +353,4 @@ open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDel
             }
         }
     }
-    
-    
 }

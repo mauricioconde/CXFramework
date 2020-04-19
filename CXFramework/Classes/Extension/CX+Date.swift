@@ -96,10 +96,10 @@ public extension Date {
     
     /// Modifies the **hours, minutes and seconds** of this Date
     /// - return: A new Date with the hours, minutes & seconds specified
-    mutating func cxModify(hours: Int, minutes: Int, seconds: Int) {
+    mutating func cxModify(hour: Int, minutes: Int, seconds: Int) {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self as Date)
-        components.hour = hours
+        components.hour = hour
         components.minute = minutes
         components.second = seconds
         self = calendar.date(from: components)!
