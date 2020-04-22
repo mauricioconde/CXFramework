@@ -9,7 +9,7 @@
 import Foundation
 
 /// Convenient class to handle file downloads from a server
-open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDelegate{
+open class CXFileDownloader: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
     let INVALID_ARRAY_INDEX = -1
     let SESSION_CONFIG_ID: String
     let MAXIMUM_CONNECTIONS_PER_HOST: Int
