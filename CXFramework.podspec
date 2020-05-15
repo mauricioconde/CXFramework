@@ -13,6 +13,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target 	= "11.0"
   
   s.source_files 		= "CXFramework/Classes/**/*"  
+  s.resources			= "CXFramework/Assets/**/*.{json,png,xcassets,storyboard,xib,strings,stringsdict,bundle}"
+  s.exclude_files 		= "CXFramework/**/*.plist"
   
   s.frameworks 			= "UIKit"
   # Uncomment if this pod will be installed from a .framework

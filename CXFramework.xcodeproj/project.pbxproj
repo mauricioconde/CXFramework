@@ -143,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				2242DE44244113CB0036C852 /* Classes */,
+				224182F32450D51E00B05AE8 /* Assets */,
 				142AE6D51DA9B858006DEC65 /* CXFramework.h */,
 				142AE6D61DA9B858006DEC65 /* Info.plist */,
 			);
@@ -247,7 +248,6 @@
 		224182EA2450D37D00B05AE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				224182EB2450D38C00B05AE8 /* Assets.xcassets */,
 				224182EC2450D38C00B05AE8 /* Image */,
 			);
 			path = Resources;
@@ -267,6 +267,22 @@
 				224182F12450D3BB00B05AE8 /* CXTopAlignedLabel.swift */,
 			);
 			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		224182F32450D51E00B05AE8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				224182F42450D57900B05AE8 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		224182F42450D57900B05AE8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				224182EB2450D38C00B05AE8 /* Assets.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		2242DE44244113CB0036C852 /* Classes */ = {
