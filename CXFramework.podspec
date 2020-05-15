@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name			= "CXFramework"
-  s.version			= "1.0.0"
+  s.version			= "1.0.1"
   s.summary			= "CX Framework"
   s.homepage			= "https://github.com/mauricioconde/CXFramework"
   s.license			= { :type => 'private', :file => 'LICENSE' }
