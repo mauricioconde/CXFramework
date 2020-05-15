@@ -8,37 +8,34 @@
 
 import Foundation
 
-@objc public protocol CXFileDownloaderDelegate {
+public protocol CXFileDownloaderDelegate {
     /// Tells the delegate that the download for a single file
     /// has been started or paused
     ///
     /// - parameters:
     ///     - fdi: The CXFileDownloadInfo object associated with the download task
-    ///     - didStartOrPauseDownloadingFile: if true indicates the download process
-    ///             has been started otherwise the process has been paused
+    ///     - didStartOrPauseDownloadingFile: indicates the status of the process
     ///     - index: The index of the 'CXFileDownloadInfo' object in the
     ///             array of Downloading files
-    ///     - status: A constant inidating the status of the process. If one error occurs,
-    ///     it is informed through this parameter
+    ///     - error: Indicates the error
     func cxFileDownloader(_ fdi: CXFileDownloadInfo?,
-                          didStartOrPauseDownloadingFile: Bool,
+                          didStartOrPauseDownloadingFile status: CXDownloadStatus,
                           index: Int,
-                          status: CXDownloadInformer)
+                          error: CXDownloadInformer?)
     
     /// Tells the delegate that the download for a single file
     /// has been cancelled
     ///
     /// - parameters:k
-    ///     - fdi: The CXFileDownloadInfo object associated with the download tas
+    ///     - fdi: The CXFileDownloadInfo object associated with the download task
     ///     - didStopDownloadingFile: Indicates if the download was cancelled
     ///     - index: The index of the 'CXFileDownloadInfo' object in the
     ///             array of Downloading files
-    ///     - status: A constant inidating the status of the process. If one error occurs,
-    ///     it is informed through this parameter
+    ///     - error: Indicates the error
     func cxFileDownloader(_ fdi: CXFileDownloadInfo?,
-                                   didStopDownloadingFile: Bool,
-                                   index: Int,
-                                   status: CXDownloadInformer)
+                          didStopDownloadingFile: Bool,
+                          index: Int,
+                          error: CXDownloadInformer?)
     
     /// Tells the delegate that all associated downloads has been started
     ///
@@ -61,22 +58,27 @@ import Foundation
     ///     - fdi: The 'CXFileDownloadInfo' object attached to the downloading file
     ///     - index: The index of the 'CXFileDownloadInfo' object inside the array of Downloads
     ///     - didUpdateDownloadProgress: The progress value
-    ///     - status: A constant inidating the status of the process. If one error occurs,
-    ///     it is informed through this parameter
+    ///     - error: Indicates the error
     func cxFileDownloader(_ fdi:CXFileDownloadInfo?,
-                                   index: Int,
-                                   didUpdateDownloadProgress progress: Double,
-                                   status: CXDownloadInformer)
+                          index: Int,
+                          didUpdateDownloadProgress progress: Double,
+                          error: CXDownloadInformer?)
     
     /// Tells the delegate the file has been downloaded and will be
     /// saved into the Documents directory.
     ///
     /// - parameters:
+    ///     - didFinishDownloading: Indicates if the files has been downloaded
     ///     - didSaveFileAtDocumentsDir: Indicates if the file was saved successfully
     ///     - name: The file name
+    ///     - index: The file index
     ///     - status: The status after the file tried to be saved.If one error occurs,
     ///     it is informed through this parameter
-    func cxFileDownloader(didSaveFileAtDocumentsDir saved: Bool, name: String?, status: CXDownloadInformer)
+    func cxFileDownloader(didFinishDownloading downloaded: Bool,
+                          didSaveFileAtDocumentsDir saved: Bool,
+                          name: String?,
+                          index: Int,
+                          status: CXDownloadInformer)
     
     /// Tells the delegate that the task finished transferring data
     /// Server errors are not reported through the error parameter. The only errors your delegate receives
@@ -94,5 +96,5 @@ import Foundation
     /// that all download has been finished.
     func cxFileDownloaderDidFinishEventsForBackground()
     
-    @objc optional func cxFileDownloader(_ didHandleError: CXDownloadInformer)
+    func cxFileDownloader(_ didHandleError: CXDownloadInformer)
 }
