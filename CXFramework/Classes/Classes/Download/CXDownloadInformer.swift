@@ -17,6 +17,8 @@ import Foundation
     case unknowDestinationFileName
     case cantCopyFromTempDir
     case indexOutOfBounds
+    case cantCreateDstURL
+    case cantFindRelatedFile
     
     public var description: String {
         switch self {
@@ -34,6 +36,14 @@ import Foundation
             return "CantCopyFromTempDir"
         case .indexOutOfBounds:
             return "IndexOutOfBounds"
+        case .cantCreateDstURL:
+            return "CantCreateDstURL"
+        case .cantFindRelatedFile:
+            return "CantFindRelatedFile"
         }
     }
+}
+
+@objc public enum CXDownloadStatus: Int {
+    case paused, started, restarted
 }

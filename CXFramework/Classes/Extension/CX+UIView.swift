@@ -9,10 +9,49 @@
 import Foundation
 import UIKit
 
+// MARK:- Animations
+public extension UIView {
+    
+    func cxFadeIn(alpha: CGFloat = 1.0, withCompletion completion: (()->Void)? = nil) {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options:[], animations: {
+                self.alpha = alpha
+            }, completion: { finished in
+                completion?()
+            })
+        }
+    }
+    
+    func cxFadeOut(withCompletion completion: (()->Void)? = nil) {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options:[], animations: {
+                self.alpha = 0.0
+            }, completion: { finished in
+                completion?()
+            })
+        }
+    }
+    
+    func cxHighlight(withCompletion completion: (()->Void)? = nil) {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options:[.curveEaseIn], animations: {
+                self.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
+            }, completion: { finished in
+                UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut], animations: {
+                }, completion: {(done) in
+                    self.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+                    completion?()
+                })
+            })
+        }
+    }
+}
+
+
 // MARK:- Transition methods
 public extension UIView{
     
-    public static func cx_performCurlAnimation(fromView: UIView,
+    static func cx_performCurlAnimation(fromView: UIView,
                                                toView:UIView,
                                                curpUp: Bool,
                                                completion: (()->Void)?){
@@ -32,7 +71,7 @@ public extension UIView{
         })
     }
     
-    public static func cx_performTransitionAnimation(fromView: UIView, toView:UIView, completion: (()->Void)?){
+    static func cx_performTransitionAnimation(fromView: UIView, toView:UIView, completion: (()->Void)?){
         UIView.transition(from: fromView,
                           to: toView,
                           duration: 0.5,
@@ -52,7 +91,7 @@ public extension UIView{
 public extension UIView {
     
     /// Adds an horizontal gradient color effect
-    public func cx_addGradient(fromColor: UIColor, toColor: UIColor) {
+    func cx_addGradient(fromColor: UIColor, toColor: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [ fromColor.cgColor, toColor.cgColor]
         gradientLayer.locations = [ 0.0, 1.0]
@@ -61,7 +100,7 @@ public extension UIView {
     }
     
     /// Adds a gradient color effect
-    public func cx_applyGradientWith(colors:[UIColor], diagonalMode: Bool, horizontalMode: Bool){
+    func cx_applyGradientWith(colors:[UIColor], diagonalMode: Bool, horizontalMode: Bool){
         let layer = CAGradientLayer()
         layer.frame = self.bounds
         
